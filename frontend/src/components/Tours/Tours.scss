@@ -1,0 +1,104 @@
+* {
+    //margin: 0 auto;
+}
+
+main {
+}
+
+
+.section-tour {
+    padding: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "MuseoSansCyrl-500", sans-serif;
+    justify-content: space-around;
+    @media (max-width: 990px) {
+        .section-tour {
+            &__box {
+                padding: 1vw;
+                width: 100vw;
+            }
+            &__link {
+                letter-spacing: 0.3vw;
+                padding: 2vw;
+                font-size: 2vw;
+            }
+            &__box-item {
+
+            }
+        }
+    }
+
+    &__box {
+        display: flex;
+        margin-top: 2vw;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30vw;
+    }
+
+    &__box-item {
+        display: flex;
+        padding: 1vw;
+        align-items: center;
+        //justify-content: space-between;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+
+
+    &__link {
+        position: relative;
+        padding: 1vw;
+        width: 100%;
+        height: 100%;
+        letter-spacing: 0.2vw;
+        font-weight: 600;
+        font-size: 1vw;
+        text-decoration: none;
+        transition: 0.5s;
+        color: black;
+
+    }
+    &__link-img {
+        height: 30px;
+        width: 30px;
+    }
+
+    &__link:hover {
+        transform: translateX(10px);
+
+    }
+
+    &__box-img {
+        padding-top: 1vw;
+        height: 80%;
+        width: 100%;
+        transition: all .6s;
+    }
+    &__box-img:hover {
+        transform: scale(1.015);
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+    }
+
+
+    &__background-color {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+
+

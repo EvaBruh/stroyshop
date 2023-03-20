@@ -1,0 +1,278 @@
+main {
+  box-sizing: border-box;
+}
+
+
+
+.background-color {
+  // Медкабинет
+  &__5894b8 {
+    background-color: #5894b8;
+    color: white;
+  }
+
+  //Вези бензин
+  &__6cb079 {
+    background-color: #6cb079;
+    color: white;
+  }
+
+  //Profi-style
+  &__d53369 {
+    color: black;
+    //background-color: #cc9191;
+    background: #d53369;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #edae92, #d6997e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #edae92, #d6997e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  //Soleta
+  &__8ec0cc {
+    background-color: #8ec0cc;
+    color: black;
+  }
+
+  //Джекина доставка
+  &__F2994A {
+    //background-color: #e69163;
+    background: #F2994A;
+    background: -webkit-linear-gradient(to left, #e39c2b, #F2994A);
+    background: linear-gradient(to left, #e39c2b, #F2994A);
+  }
+
+  //Van Laar
+  &__45665d {
+    background-color: #45665d;
+    color: white;
+  }
+
+  //Beerfolio
+  &__313436 {
+    color: white;
+    background: #313436;
+    background: -webkit-linear-gradient(to left, #414345, #313436);
+    background: linear-gradient(to left, #414345, #313436);
+  }
+
+  //Elke
+  &__4d5cb3 {
+    background-color: #4d5cb3;
+    color: white;
+  }
+
+  //Megumi
+  &__2C7744 {
+    color: white;
+    background: #2C7744;
+    background: -webkit-linear-gradient(to left, #2C7744, #476241);
+    background: linear-gradient(to left, #2C7744, #476241);
+  }
+
+  //Есть повод!
+  &__d48c2f {
+    background-color: #d48c2f;
+    color: white;
+  }
+
+  //Zoo Planet
+  &__aad647 {
+    background: #aad647;
+    background: -webkit-linear-gradient(to right, #aad647, #7db341);
+    background: linear-gradient(to right, #aad647, #7db341);
+  }
+
+  //Maglena     #cc9c60 - monolit variant
+  &__eacda3 {
+    background: #eacda3;
+    background: -webkit-linear-gradient(to top, #d6ae7b, #eacda3);
+    background: linear-gradient(to top, #d6ae7b, #eacda3);
+  }
+
+  //Рыбный остров
+  &__a0abb8 {
+    background: #8e9eab;
+    background: -webkit-linear-gradient(to bottom, #cdd2d4, #8e9eab);
+    background: linear-gradient(to bottom, #cdd2d4, #8e9eab);
+  }
+
+  //Хвостики ZOOМИР
+  &__ffffff {
+    background: #1ab4aa;
+    background: -webkit-linear-gradient(to bottom, #D4D3DD, #1ab4aa);
+    background: linear-gradient(to bottom, #D4D3DD, #1ab4aa);
+  }
+}
+@media (max-width: 989px) {
+  .section-product {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+
+  }
+}
+.section-product {
+  @media (max-width: 989px) {
+    .section-product {
+      &__box-items {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+
+      }
+
+      &__box-reverse {
+        display: flex;
+        flex-wrap: wrap-reverse;
+      }
+      &__heading {
+        font-size: 5vw;
+        font-weight: 700;
+      }
+      &__title {
+        font-size: 2.5vw;
+        margin-bottom: 5vw;
+      }
+      &__text {
+        width: 100%;
+      }
+
+      &__box-img {
+        width: 100%;
+        //height: 50vh;
+      }
+      &__box {
+        width: 100%;
+      }
+    }
+  }
+
+  &__box-items {
+    display: flex;
+    //height: 40vw;
+  }
+
+  &__text {
+    display: flex;
+    padding: 3vw;
+    flex-direction: column;
+    width: 50%;
+    //height: 100%;
+    justify-content: space-around;
+
+  }
+
+  &__heading {
+    font-size: 2vw;
+    font-family: 'MuseoSansCyrl-100', sans-serif;
+  }
+
+  &__title {
+    font-size: 1vw;
+    font-family: 'MuseoSansCyrl-300', sans-serif;
+    width: 70%;
+
+  }
+
+  &__box-img {
+    width: 50%;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+  }
+  &__about-box {
+    display: flex;
+  }
+
+  .btn {
+    display: block;
+    text-decoration: none;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+  }
+
+  .btn-one {
+    color: #FFF;
+    font-family: 'MuseoSansCyrl-300', sans-serif;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .btn-one span {
+    transition: all 0.3s;
+  }
+  &__span-Profi {
+    transition: all 0.3s;
+    color: black;
+  }
+  &__span-Soleta {
+    transition: all 0.3s;
+    color: black;
+  }
+  &__span-Jeki {
+    transition: all 0.3s;
+    color: black;
+  }
+  &__span-Zoo {
+    transition: all 0.3s;
+    color: black;
+  }
+  &__span-Maglena {
+    transition: all 0.3s;
+    color: black;
+  }
+  &__span-Fish {
+    transition: all 0.3s;
+    color: black;
+  }
+  &__span-Zoomir {
+    transition: all 0.3s;
+    color: black;
+  }
+  .btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+
+  }
+  .btn-one:hover span {
+    letter-spacing: 2px;
+  }
+  .btn-one:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  .btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .btn-one:hover::after {
+    opacity: 0;
+    transform: scale(0.1, 1);
+  }
+}

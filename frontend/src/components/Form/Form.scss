@@ -1,0 +1,473 @@
+@media (max-width: 989px) {
+  .myTest  {
+    .ant-modal-content {
+      background-color: rgba(0,0,0,0.9);
+      left: 0;
+      width: 90vw;
+    }
+
+    .ant-modal-mask{
+    }
+
+    .form-box {
+      display: flex;
+      height: 50vw;
+
+      justify-content: space-around;
+      align-items: center;
+      font-family: 'MuseoSansCyrl-300', sans-serif;
+
+      &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        //align-items: center;
+        width: 40%;
+        height: 100%;
+      }
+
+      &__left-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 60%;
+      }
+
+      &__item-button {
+        height: 100%;
+        padding: 15px;
+        border: none;
+        background-color: rgba(0,0,0,0.1);
+        outline: none;
+        width: 100%;
+        color: white;
+      }
+
+      &__right {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 100%;
+        align-items: center;
+
+      }
+
+      &__text-box {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+      }
+
+      &__about {
+        color: white;
+        font-size: 2.5vw;
+      }
+      &__rules {
+        color: white;
+        font-size: 0.7vw;
+        width: 100%;
+        text-align: center;
+      }
+      &__rules-link {
+        display: flex;
+        font-size: 0.8vw;
+        text-align: center;
+        text-decoration: none;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+      }
+      &__a {
+        color: white;
+      }
+      &__a:hover {
+        color: #FACC00FF;
+      }
+      &__heading {
+        font-size: 3vw;
+        color: white;
+      }
+
+      &__right-img {
+        display: none;
+
+      }
+    }
+
+    ::placeholder {
+      color: white;
+    }
+
+    .col-3 {
+      float: left;
+      width: 100%;
+      position: relative;
+      font-size: 2.3vw;
+
+      input [
+    type="text"
+    ] {
+        color: #fdfdfd;
+        width: 100%;
+        box-sizing: border-box;
+        letter-spacing: 1px;
+      }
+    }
+
+    .effect-8,{
+      width: 100%;
+      border: 1px solid #ccc;
+      background-color: transparent;
+      padding: 1.5vw 2.5vw;
+      transition: 0.4s;
+      color: white;
+    }
+    .effect-8 ~ .focus-border:before,
+      /*  .effect-8 ~ .focus-border:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 0px;
+          background-color: rgba(23, 22, 22, 0);
+          transition: 0.3s;}*/
+
+    .effect-8 ~ .focus-border:after {
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;}
+    .effect-8 ~ .focus-border i:before,
+    .effect-8 ~ .focus-border i:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 0;
+      background-color: rgb(250, 204, 0);
+      transition: 0.7s;}
+    .effect-8 ~ .focus-border i:after {
+      left: auto;
+      right: 0;
+      top: auto;
+      bottom: 0;
+    }
+    .effect-8:focus ~ .focus-border:before,
+    .effect-8:focus ~ .focus-border:after {
+      width: 100%;
+      transition: 0.3s;
+
+    }
+    .effect-8:focus ~ .focus-border i:before,
+    .effect-8:focus ~ .focus-border i:after {
+      height: 100%;
+      transition: 0.7s;
+    }
+    .effect-8:focus {
+
+    }
+
+
+    .btn {
+      line-height: 50px;
+      height: 50px;
+      text-align: center;
+      width: 250px;
+      cursor: pointer;
+    }
+
+    .btn-one {
+      color: #FFF;
+      transition: all 0.3s;
+      position: relative;
+      font-size: 2.6vw;
+      width: 100%;
+
+    }
+    .btn-one span {
+      transition: all 0.3s;
+
+    }
+    .btn-one::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: rgb(245, 208, 7);
+      border-bottom-color: rgb(245, 208, 6);
+      transform: scale(0.1, 1);
+    }
+    .btn-one:hover span {
+      letter-spacing: 2px;
+    }
+    .btn-one:hover::before {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+    .btn-one::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: all 0.3s;
+      background-color: rgba(255,255,255,0.1);
+    }
+    .btn-one:hover::after {
+      opacity: 0;
+      transform: scale(0.1, 1);
+    }
+  }
+
+}
+
+
+@media (min-width: 990px) {
+  .myTest  {
+    .ant-modal-content {
+      background-color: rgba(0,0,0,0.9);
+      left: 0;
+      width: 90vw;
+    }
+
+    .ant-modal-mask{
+    }
+
+    .form-box {
+      display: flex;
+      height: 30vw;
+
+      justify-content: space-around;
+      align-items: center;
+      font-family: 'MuseoSansCyrl-300', sans-serif;
+
+      &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        //align-items: center;
+        width: 30%;
+        height: 100%;
+      }
+
+      &__left-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 60%;
+      }
+
+      &__item-button {
+        height: 100%;
+        padding: 15px;
+        border: none;
+        background-color: rgba(0,0,0,0.1);
+        outline: none;
+        width: 100%;
+        color: white;
+      }
+
+      &__right {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 50%;
+        height: 100%;
+        align-items: center;
+
+      }
+
+      &__text-box {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+
+      &__about {
+        color: white;
+        font-size: 1.2vw;
+      }
+      &__rules {
+        color: white;
+        font-size: 0.7vw;
+        width: 100%;
+        text-align: center;
+      }
+      &__rules-link {
+        display: flex;
+        font-size: 0.8vw;
+        text-align: center;
+        text-decoration: none;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+      }
+      &__a {
+        color: white;
+      }
+      &__a:hover {
+        color: #FACC00FF;
+      }
+      &__heading {
+        font-size: 2vw;
+        color: white;
+      }
+
+      &__right-img {
+        object-fit: contain;
+        width: 50%;
+      }
+    }
+
+    ::placeholder {
+      color: white;
+    }
+
+    .col-3 {
+      float: left;
+      width: 100%;
+      position: relative;
+
+      input [
+    type="text"
+    ] {
+        color: #fdfdfd;
+        width: 100%;
+        box-sizing: border-box;
+        letter-spacing: 1px;
+      }
+    }
+
+    .effect-8,{
+      width: 100%;
+      border: 1px solid #ccc;
+      background-color: transparent;
+      padding: 0.8vw 1.5vw;
+      transition: 0.4s;
+      color: white;
+    }
+    .effect-8 ~ .focus-border:before,
+      /*  .effect-8 ~ .focus-border:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 0px;
+          background-color: rgba(23, 22, 22, 0);
+          transition: 0.3s;}*/
+
+    .effect-8 ~ .focus-border:after {
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;}
+    .effect-8 ~ .focus-border i:before,
+    .effect-8 ~ .focus-border i:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 0;
+      background-color: rgb(250, 204, 0);
+      transition: 0.7s;}
+    .effect-8 ~ .focus-border i:after {
+      left: auto;
+      right: 0;
+      top: auto;
+      bottom: 0;
+    }
+    .effect-8:focus ~ .focus-border:before,
+    .effect-8:focus ~ .focus-border:after {
+      width: 100%;
+      transition: 0.3s;
+
+    }
+    .effect-8:focus ~ .focus-border i:before,
+    .effect-8:focus ~ .focus-border i:after {
+      height: 100%;
+      transition: 0.7s;
+    }
+    .effect-8:focus {
+
+    }
+
+
+    .btn {
+      line-height: 50px;
+      height: 50px;
+      text-align: center;
+      width: 250px;
+      cursor: pointer;
+    }
+
+    .btn-one {
+      color: #FFF;
+      transition: all 0.3s;
+      position: relative;
+      font-size: 16px;
+      width: 100%;
+
+    }
+    .btn-one span {
+      transition: all 0.3s;
+
+    }
+    .btn-one::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: rgb(245, 208, 7);
+      border-bottom-color: rgb(245, 208, 6);
+      transform: scale(0.1, 1);
+    }
+    .btn-one:hover span {
+      letter-spacing: 2px;
+    }
+    .btn-one:hover::before {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+    .btn-one::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: all 0.3s;
+      background-color: rgba(255,255,255,0.1);
+    }
+    .btn-one:hover::after {
+      opacity: 0;
+      transform: scale(0.1, 1);
+    }
+  }
+}

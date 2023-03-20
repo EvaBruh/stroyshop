@@ -1,0 +1,147 @@
+.section-project {
+  &__project-card {
+    width: 33%;
+    padding-bottom: 1vw;
+  }
+  &__project-item {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    height: 25vw;
+  }
+  @media (max-width: 990px) {
+    .section-project {
+      &__project-card {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+      }
+      &__project-item {
+        width: 100%;
+        height: 100vw;
+      }
+
+      &__description-info {
+        font-size: 3vw;
+      }
+       &__description-city {
+         font-size: 3vw;
+       }
+    }
+
+  }
+
+  &__project-info {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1s;
+    background-color: rgba(0,0,0, .8);
+  }
+
+  &__project-info:hover {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  &__border {
+    display: flex;
+    position: absolute;
+    padding: 1vw;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__item-box {
+    display: flex;
+    border: solid 2px rgba(255, 255, 255, 0.6);
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.7rem;
+
+  }
+
+  &__item-name {
+    width: 60%;
+    font-size: 1.3vw;
+    color: white;
+    font-weight: 600;
+    padding-left: 1vw;
+  }
+
+  &__item-town {
+    font-size: 1.2vw;
+    color: white;
+    padding-left: 1vw;
+  }
+
+  &__item-description {
+    font-size: 1.2vw;
+    color: white;
+    padding-left: 1vw;
+    letter-spacing: 2px;
+  }
+
+  &__item-img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  &__item-button {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 4vw;
+    border-top: solid 2px rgba(255, 255, 255, 0.6);
+    transition: .5s;
+  }
+
+  &__item-button:hover {
+    background-color: rgba(255,255,255, 0.1);
+  }
+
+  &__item-link {
+    font-size: 1.2vw;
+    transition: 0.5s;
+    width: 100%;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+  }
+
+  &__description-info {
+    font-weight: bold;
+    font-size: 1.3vw;
+    width: 100%;
+    font-family: MuseoSansCyrl-300, sans-serif;
+  }
+
+  &__description-city {
+    font-size: 1.1vw;
+    font-family: MuseoSansCyrl-300, sans-serif;
+    font-weight: lighter;
+    opacity: 60%;
+    line-height: 1px;
+
+  }
+
+  .ant-skeleton-active {
+    width: 100%;
+    height: 100%;
+  }
+
+}

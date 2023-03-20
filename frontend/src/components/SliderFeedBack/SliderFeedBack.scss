@@ -1,0 +1,142 @@
+#Slider {
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
+  height: 40vw;
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 1;
+}
+.swiper-button-prev,
+.swiper-button-next {
+    color: white !important;
+    margin: 1vw;
+}
+
+.project {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-family: "MuseoSansCyrl-300", sans-serif;
+
+  &__sibagro {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    background: #093028; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #237A57, #093028); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #237A57, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  &__jeki {
+    width: 100%;
+    height: 100%;
+      padding: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: #F2994A;
+    background: -webkit-linear-gradient(to left, #e39c2b, #F2994A);
+    background: linear-gradient(to left, #e39c2b, #F2994A);
+  }
+  &__elke {
+    color: white;
+      padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    background-color: #4d5cb3;
+  }
+  &__megumi {
+    color: white;
+      padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    background: #2C7744;
+    background: -webkit-linear-gradient(to left, #2C7744, #476241);
+    background: linear-gradient(to left, #2C7744, #476241);
+  }
+
+  &__logo {
+    object-fit: contain;
+    border-radius: 100px;
+    width: 160px;
+    height: 160px;
+    top: 6vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+  &__logo-megumi {
+    object-fit: contain;
+    border-radius: 100px;
+    width: 160px;
+    height: 160px;
+    position: relative;
+    top: 6vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+  &__text-box {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+  }
+  &__heading {
+      font-size: 4vw;
+      font-family: "MuseoSansCyrl-100", sans-serif;
+
+  }
+  &__middle-text {
+      font-size: 1.8vw;
+  }
+  &__bottom-text {
+      font-size: 1.4vw;
+  }
+
+
+  }
+
+.swiper-slide {
+  height: 100%;
+
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+/*  width: 100%;
+  height: 100%;*/
+
+}

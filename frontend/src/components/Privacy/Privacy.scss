@@ -1,0 +1,21 @@
+.section-privacy {
+  padding: 80px;
+  display: flex;
+  font-family: "MuseoSansCyrl-500", sans-serif;
+  flex-direction: column;
+  &__head {
+    text-align: center;
+    font-size: 2vw;
+    padding: 15px;
+  }
+  &__text-box {
+    border-top: 1px solid;
+  }
+  &__heading {
+    font-size: 1vw;
+    padding: 20px;
+  }
+  &__text {
+    font-size: 1vw;
+  }
+}

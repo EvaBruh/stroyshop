@@ -1,0 +1,360 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+}
+.hamburger-menu {
+  opacity: 0;
+  width: 0;
+  display: none;
+}
+@media (max-width: 989px) {
+
+  .number-phone {
+    display: none;
+  }
+
+  .hamburger-menu {
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    #menu__toggle {
+      opacity: 0;
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span {
+      transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    #menu__toggle:checked ~ .menu__btn > span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    #menu__toggle:checked ~ .menu__box {
+      visibility: visible;
+      left: 0;
+    }
+
+    .menu__btn {
+      display: flex;
+      align-items: center;
+      position: fixed;
+
+
+      width: 5vw;
+
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+      display: block;
+      position: absolute;
+
+      width: 100%;
+      height: 0.3vw;
+      background-color: #fff;
+      transition-duration: .25s;
+    }
+
+    .menu__btn > span::before {
+      content: '';
+      top: -8px;
+    }
+
+    .menu__btn > span::after {
+      content: '';
+      top: 8px;
+    }
+
+    .menu__box {
+      display: block;
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      left: -100%;
+      width: 50vw;
+      height: 100vh;
+      margin: 0;
+      padding: 10vw 0;
+      list-style: none;
+
+
+      background-color: rgba(0,0,0, .8);
+      box-shadow: 1px 0 6px rgba(0, 0, 0, .5);
+
+      transition-duration: .25s;
+    }
+
+    .menu__item {
+      display: block;
+      padding: 3vw 4.5vw;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 4vw;
+      font-weight: 600;
+      text-decoration: none;
+      transition-duration: .25s;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    }
+
+    .menu__item:hover {
+      background-color: #434648;
+    }
+  }
+  .header--hidden {
+    top: -10vw;
+  }
+  .header  {
+    height: 10vw;
+    justify-content: space-between;
+    transition: top .6s;
+
+    &-box__logo {
+      height: 6vw;
+      display: flex;
+      align-items: center;
+    }
+    &-box__logo-img {
+      height: 5.5vw;
+    }
+
+    &-box__contacts-link {
+      font-size: 2vw;
+      color: white;
+      text-decoration: none;
+    }
+
+    &-box__contacts-phone {
+      width: 4vw;
+    }
+
+    &-box__img {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 205%;
+    }
+
+    &-box__logo:after {
+      display: none;
+    }
+    &-box__tours {
+      color: white;
+      text-decoration: none;
+      font-size: 2.8vw;
+      animation: pulsing 2s infinite;
+    }
+  }
+}
+
+@media (min-width: 990px) {
+
+  .header {
+    height: 5vw;
+
+    &-box__logo {
+      height: 5vw;
+      display: flex;
+      align-items: center;
+    }
+    &-box__logo-img {
+      height: 3vw;
+    }
+
+    &-box__contacts-link {
+      font-size: 1vw;
+      color: white;
+      text-decoration: none;
+
+    }
+    &-box__contacts-phone {
+      width: 3vw;
+      color: white;
+      animation-duration: 1s;
+      animation-name: slidein;
+    }
+    @keyframes slidein {
+      from {
+        margin-left: 100%;
+      }
+
+      to {
+        margin-left: 0%;
+      }
+    }
+  }
+}
+
+
+.header-box__menu {
+  display: none;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 16;
+  top: 0;
+}
+
+.header-container {
+  font-family: 'MuseoSansCyrl-300', sans-serif;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.header-box__img {
+}
+
+.header-box__logo {
+  position: relative;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.header-box__logo:hover {
+  transform: translate3d(0px, 2px, 2px);
+}
+
+.header-box__img-link {
+
+}
+
+.header-box__logo-img {
+}
+
+.header-box__contacts {
+  display: flex;
+  flex-direction: column;
+  z-index: 17;
+
+}
+
+.header-box__contacts-links {
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  font-size: 1vw;
+  color: white;
+  text-decoration: none
+}
+.header-box__contacts-links:hover {
+  transform: translate3d(0px, 2px, 2px);
+}
+
+
+@media (min-width: 990px) {
+  .svg-phone {
+    display: none;
+  }
+  .header-box__menu {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .header-box__tours {
+    display: none;
+  }
+
+  .header-box__menu-list {
+    max-height: 100%;
+    justify-content: space-between;
+    display: flex;
+    color: white;
+    transition: 0.5s;
+  }
+
+  .header-box__menu-list.window {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 820px;
+    display: none;
+    z-index: 9999;
+  }
+
+  .header-box__list-item {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    transition: 0.5s;
+  }
+  .header-box__list-item:hover {
+    transform: translate3d(0px, 2px, 2px);
+  }
+
+  .header-box__list-link {
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 1vw;
+    font-size: 1vw;
+    cursor: pointer;
+  }
+
+  .animation-tours {
+    height: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    padding: 1vw;
+    font-size: 1vw;
+    animation: pulsing 2s infinite;
+  }
+
+  .header-box__img {
+    padding-left: 0;
+  }
+}
+@-webkit-keyframes pulsing {
+  0% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0)
+  }
+  50% {
+    -webkit-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0)
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0)
+  }
+  50% {
+    -webkit-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0)
+  }
+}
+
+
+
+
