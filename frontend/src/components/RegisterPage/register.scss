@@ -1,0 +1,32 @@
+.register {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.register__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register__title {
+    text-align: center;
+}
+
+.register__divider {
+    margin-bottom: 20px;
+}
+
+.register__label {
+    margin-bottom: 10px;
+}
+
+.register__input {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.register__button {
+    padding: 10px;
+}

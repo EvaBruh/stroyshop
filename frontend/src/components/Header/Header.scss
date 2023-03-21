@@ -139,6 +139,7 @@ main {
       width: 4vw;
     }
 
+
     &-box__img {
       display: flex;
       align-items: center;
@@ -176,6 +177,7 @@ main {
       font-size: 1vw;
       color: white;
       text-decoration: none;
+      margin-top: 0.5vh;
 
     }
     &-box__contacts-phone {
@@ -241,7 +243,7 @@ main {
 
 .header-box__contacts {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   z-index: 17;
 
 }
@@ -254,8 +256,16 @@ main {
   height: 100%;
   font-size: 1vw;
   color: white;
-  text-decoration: none
+  text-decoration: none;
+
+    .header-box__contacts-login {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
 }
+
 .header-box__contacts-links:hover {
   transform: translate3d(0px, 2px, 2px);
 }
