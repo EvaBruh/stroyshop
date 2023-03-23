@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
 
     // Требует имя и пароль, если юзер существует и актуален-логин. Токены хранятся в локалСторе
     const loginUser = async (username, password) => {
+        try {
         const response = await fetch('http://127.0.0.1:8000/api/token/', {
             method: "POST",
             headers: {
@@ -25,7 +26,7 @@ export const AuthProvider = ({ children }) => {
             },
             body: JSON.stringify({
                 username,
-                password
+                password,
             })
         });
         const data = await response.json();
@@ -36,13 +37,18 @@ export const AuthProvider = ({ children }) => {
             localStorage.setItem("authTokens", JSON.stringify(data));
             history("/");
         } else {
-            alert("Somethin wrong ;-/");
+            // здесь можно обработать сообщение об ошибке
+                return data;
         }
-    };
+    } catch (err) {
+        throw err;
+    }
+};
 
     // Рега юзера в БД. Валидация полей на бэке. Успех=>уходим на страницу логина.
-    const registerUser = async (username, password, password2) => {
-        const response =await fetch('http://127.0.0.1:8000/api/register/', {
+    const registerUser = async (username, password, password2, email) => {
+        try {
+        const response = await fetch('http://127.0.0.1:8000/api/register/', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -50,15 +56,19 @@ export const AuthProvider = ({ children }) => {
             body: JSON.stringify({
                 username,
                 password,
-                password2
+                password2,
+                email
             })
         });
         if (response.status === 201) {
             history("/login/");
         } else {
-            alert("Something wrong!");
+            throw await response.json();
         }
-    };
+    } catch (err) {
+        throw err;
+    }
+};
 
     // Выход и очистка стора
     const logoutUser = () => {
