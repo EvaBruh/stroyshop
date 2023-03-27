@@ -20,28 +20,32 @@ function Register() {
     return (
         <section className="register">
             <form className="register__form" onSubmit={handleSubmit}>
-                <h1 className="register__title">Registration here</h1>
-                <hr className="register__divider" />
-                <div>
-                    <label className="register__label" htmlFor="username">Username</label>
-                    <input className="register__input" type="text" id="username" onChange={e => setUsername(e.target.value)} placeholder="Username" required />
-                    {errors.username && <p>{errors.username[0]}</p>}
+                <h1 className="register__title">Регистрация</h1>
+                <hr className="register__divider"/>
+                <div className="register__field">
+                    <p className="register__label" htmlFor="username">Логин</p>
+                    <input className="register__input" type="text" id="username"
+                           onChange={e => setUsername(e.target.value)} placeholder="Введите Логин" required/>
+                    {errors.username && <p className="register__error" >{errors.username[0]}</p>}
                 </div>
-                <div>
-                    <label className="register__label" htmlFor="email">Email</label>
-                    <input className="register__input" type="text" id="email" onChange={e => setEmail(e.target.value)} placeholder="Email" required />
-                    {errors.email && <p>{errors.email[0]}</p>}
+                <div className="register__field">
+                    <p className="register__label" htmlFor="email">Ваш e-mail</p>
+                    <input className="register__input" type="text" id="email" onChange={e => setEmail(e.target.value)}
+                           placeholder="Введите e-mail" required/>
+                    {errors.email && <p className="register__error" >{errors.email[0]}</p>}
                 </div>
-                <div>
-                    <label className="register__label" htmlFor="password">Password</label>
-                    <input className="register__input" type="password" id="password" onChange={e => setPassword(e.target.value)} placeholder="Password" required />
-                     {errors.password && errors.password.map((error, index) => <p key={index}>{error}</p>)}
+                <div className="register__field">
+                    <p className="register__label" htmlFor="password">Пароль</p>
+                    <input className="register__input" type="password" id="password"
+                           onChange={e => setPassword(e.target.value)} placeholder="Введите пароль" required/>
+                    {errors.password && errors.password.map((error, index) => <p className="register__error" key={index}>{error}</p>)}
                 </div>
-                <div>
-                    <label className="register__label" htmlFor="confirm-password">Confirm Password</label>
-                    <input className="register__input" type="password" id="confirm-password" onChange={e => setPassword2(e.target.value)} placeholder="Confirm Password" required />
+                <div className="register__field">
+                    <p className="register__label" htmlFor="confirm-password">Подтвердите пароль</p>
+                    <input className="register__input" type="password" id="confirm-password"
+                           onChange={e => setPassword2(e.target.value)} placeholder="Подтвердите пароль" required/>
                 </div>
-                <button className="register_button">Register!</button>
+                <button className="register__button">Регистрация</button>
             </form>
         </section>
     );

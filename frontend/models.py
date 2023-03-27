@@ -1,5 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
+from django.utils import timezone
+
+from stroyshop import settings
 
 
 class Category(models.Model):
@@ -7,6 +10,11 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CustomUser(AbstractUser):
+    # добавление новых полей
+    email_confirmed = models.BooleanField(default=False)
 
 
 class Product(models.Model):
@@ -22,7 +30,7 @@ class Product(models.Model):
 
 
 class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -30,5 +38,15 @@ class Cart(models.Model):
 
     class Meta:
         unique_together = ('user', 'product')
+
+
+class VerificationCode(models.Model):
+    email = models.EmailField()
+    code = models.CharField(max_length=6)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def is_valid(self):
+        # Проверка срока действия кода (10 минут)
+        return timezone.now() - self.created_at < timezone.timedelta(minutes=10)
 
 

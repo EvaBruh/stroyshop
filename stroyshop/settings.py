@@ -72,6 +72,17 @@ REST_FRAMEWORK = {
     # 'PAGE_SIZE': 6
 }
 
+AUTH_USER_MODEL = 'frontend.CustomUser'
+
+# Настройки электронной почты
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'alterede4@gmail.com'
+EMAIL_HOST_PASSWORD = '14784452Qqq'
+
 # JWT-Access
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
@@ -117,8 +128,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.0.114:8000",
 ]
 
-#CORS_ALLOW_METHODS = [
-#]
+CORS_ALLOW_METHODS = [
+    'POST',
+
+]
 
 CORS_ALLOW_HEADERS = [
     "accept",
