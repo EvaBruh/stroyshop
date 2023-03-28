@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import axios from "axios";
 
 const AuthContext = createContext();
 
@@ -71,7 +72,14 @@ export const AuthProvider = ({ children }) => {
 };
 
     // Выход и очистка стора
-    const logoutUser = () => {
+    const logoutUser = async () => {
+        try {
+            const authTokens = JSON.parse(localStorage.getItem('authTokens'));
+            const refresh_token = authTokens.refresh;
+            await axios.post('http://127.0.0.1:8000/api/logout/', { refresh_token });
+        } catch (error) {
+            console.log('eRRRR', error);
+        }
         setAuthTokens(null);
         setUser(null);
         localStorage.removeItem("authTokens");

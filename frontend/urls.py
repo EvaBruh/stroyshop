@@ -1,5 +1,5 @@
 from django.urls import path, re_path, include
-from . import views
+from . import views, activatemail
 
 from rest_framework_simplejwt.views import (TokenRefreshView,)
 
@@ -14,10 +14,11 @@ urlpatterns = [
         path('password_recovery/', views.password_recovery, name='password_recovery'),
         path('verify_code/', views.verify_code, name='verify_code'),
         path('reset_password/', views.reset_password, name='reset_password'),
+        path('logout/', views.BlacklistRefreshView.as_view(), name='logout'),
+        path('activate_mail/', activatemail.send_email_cabinet, name='activate_mail_cabinet'),
         path('', views.getRoutes),
     ])),
     path('activate/<uidb64>/<token>/', views.activate, name='activate'),
-
     re_path(r'^project/\w+', views.index),
     path('tours/', views.index),
     path('facades/', views.index),
@@ -29,5 +30,5 @@ urlpatterns = [
     path('presentation/', views.index),
     path('login/', views.index),
     path('register/', views.index),
-    path('personal/', views.index),
+    path('personal/', views.index, name='personal'),
 ]

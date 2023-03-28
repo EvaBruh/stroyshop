@@ -1,32 +1,50 @@
+import logging
+import os
+
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
+from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from rest_framework import serializers
 
-
-# Создание token, token access, token refresh
+from stroyshop.settings import log_dir
 from .activatemail import send_activation_email
 
 User = get_user_model()
 
+# Создание логгера с именем 'serialize_logger'
+logger = logging.getLogger('serialize_logger')
 
+# Настройка обработчика для записи ошибок в файл 'errors_serializers.log'
+handler = logging.FileHandler(os.path.join(log_dir, 'errors_serializers.log'))
+handler.setLevel(logging.ERROR)
+
+# Добавление обработчика к логгеру
+logger.addHandler(handler)
+
+
+# Создание token, token access, token refresh
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
-        token = super().get_token(user)
-        # Add custom
-        token['username'] = user.username
-        token['email'] = user.email
-        # ...
-        return token
+        try:
+            token = super().get_token(user)
+            # Add custom
+            token['username'] = user.username
+            token['email'] = user.email
+            # ...
+            return token
+        except Exception as e:
+            logger.error(f'Error in serializers MyTokenObtainPairSerialize - get_token: {e}')
 
-    # ошибка на попытке логина, получилось только так
+    # вывод ошибки на попытке логина, получилось только так
+    # Вызов метода validate родительского класса с помощью функции super() -
+    # для проверки и очистки входных данных перед сохранением в базе данных или выполнением других операций.
     def validate(self, attrs):
         try:
             data = super().validate(attrs)
-        except:
+        except Exception as e:
+            logger.error(f'Error in serializers MyTokenObtainPairSerialize - validate: {e}')
             # здесь можно добавить свои сообщения об ошибках
             if 'no_active_account':
                 e = dict({'no_active_account': ''})
@@ -52,13 +70,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         return attrs
 
     def validate_email(self, value):
-        # Проверка уникальности адреса электронной почты
+        # Проверка уникальности адреса электронной почты (exists() возвращает True/False)
         if User.objects.filter(email=value).exists():
             raise serializers.ValidationError("Этот адрес электронной почты уже используется.")
         return value
 
     def validate_username(self, value):
-
         # Проверка уникальности логина
         if User.objects.filter(username=value).exists():
             raise serializers.ValidationError("Этот логин уже используется.")
@@ -72,6 +89,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Логин может содержать только буквы и цифры.")
         return value
 
+    # Если всё валидно, юзер создается в БД и получает email письмо для активации аккаунта
     def create(self, validated_data):
         try:
             user = User.objects.create(username=validated_data['username'], email=validated_data['email'])
@@ -80,5 +98,6 @@ class RegisterSerializer(serializers.ModelSerializer):
             send_activation_email(self.context['request'], user)
             return user
         except Exception as e:
+            logger.error(f'Error in serializers MyTokenObtainPairSerialize - create: {e}')
             raise ValidationError({"error": str(e)})  # Отправка ошибки клиенту
 

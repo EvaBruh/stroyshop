@@ -1,20 +1,47 @@
 .personal-page {
-  // Стили для блока personal-page
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #f8f4ea;
+  font-family: "MuseoSansCyrl-300", sans-serif;
 
   &__title {
-    // Стили для элемента personal-page__title
-    margin-top: 5vw;
-    font-size: 36px;
+    font-size: 2vw;
     text-align: center;
   }
 
   &__content {
-    // Стили для элемента personal-page__content
-    font-size: 18px;
+    font-size: 1vw;
     line-height: 1.5;
-    margin-top: 20px;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
   }
+}
+
+.email-status {
+  &--confirmed {
+    color: green;
+  }
+
+  &--not-confirmed {
+    color: red;
+  }
+}
+
+.email-activation-link {
+  color: black;
+}
+
+.change-password-form {
+      display: flex;
+    flex-direction: column;
+}
+
+.form-errors {
+      list-style: none;
+    //padding: 0;
+    margin: 0;
 }
