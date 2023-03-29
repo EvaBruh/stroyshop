@@ -46,7 +46,7 @@ class VerificationCode(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def is_valid(self):
-        # Проверка срока действия кода (10 минут)
-        return timezone.now() - self.created_at < timezone.timedelta(minutes=10)
+        # Проверка срока действия кода (60 минут)
+        return timezone.now() - self.created_at < timezone.timedelta(minutes=60)
 
 
