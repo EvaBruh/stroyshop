@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import logging
 import os
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,6 +29,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
+# настройки logger
+log_dir = 'logs'
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+logging.basicConfig(filename=os.path.join(log_dir, 'errors.log'), level=logging.ERROR)
 
 # Application definition
 
@@ -38,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
     'frontend.apps.FrontendConfig',
     'corsheaders',
 ]
@@ -53,6 +61,68 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+# API DRF
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    # 'DEFAULT_RENDERER_CLASSES': (
+    # JSON набор строк
+    # 'rest_framework.renderers.JSONRenderer',
+    # браузерная версия
+    # 'rest_framework.renderers.BrowsableAPIRenderer'
+    # ),
+
+    # пагинация
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # 'PAGE_SIZE': 6
+}
+
+AUTH_USER_MODEL = 'frontend.CustomUser'
+
+# Настройки электронной почты
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'alterede@yandex.ru'
+EMAIL_HOST_PASSWORD = 'xfnwwcqfsmwtlklt'
+
+# JWT-Access
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=50),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': False,
+
+    'ALGORITHM': 'HS256',
+
+    'VERIFYING_KEY': None,
+    'AUDIENCE': None,
+    'ISSUER': None,
+    'JWK_URL': None,
+    'LEEWAY': 0,
+
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'USER-AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
+
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
+    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
+
+    'JTI_CLAIM': 'jti',
+
+    'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
+    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+}
+
 CORS_ORIGIN_WHITELIST = ['http://localhost:3000',
                          'http://localhost:8000',
                          'http://127.0.0.1:8000',
@@ -65,8 +135,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.0.114:8000",
 ]
 
-#CORS_ALLOW_METHODS = [
-#]
+CORS_ALLOW_METHODS = [
+    'POST',
+
+]
 
 CORS_ALLOW_HEADERS = [
     "accept",
@@ -171,18 +243,3 @@ APPEND_SLASH = True
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 
-# отображение API
-
-REST_FRAMEWORK = {
-    # 'DEFAULT_RENDERER_CLASSES': (
-    # JSON набор строк
-    # 'rest_framework.renderers.JSONRenderer',
-    # браузерная версия
-    # 'rest_framework.renderers.BrowsableAPIRenderer'
-    # ),
-
-    # пагинация
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    # 'PAGE_SIZE': 6
-
-}

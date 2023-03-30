@@ -1,0 +1,17 @@
+.header-box__userinfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 1vw;
+  color: white;
+
+  &__username {
+  margin-bottom: 1vw;
+    color: #f6cc06;
+  }
+  &__logout {
+  }
+}
+a {
+  text-decoration: none;
+  color: white;
+}

@@ -15,8 +15,10 @@ import VR4 from '../../img/vr-4.jpg';
 import {Helmet} from "react-helmet";
 import Counter from "./counter";
 
+
 const HomePage = () => {
     /* принимаем картинки из API и ставим в src [номер массива нужной]*/
+
 
     const [img, setImg] = useState([]);
     useEffect(() => {

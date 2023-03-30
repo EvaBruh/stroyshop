@@ -1,0 +1,54 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #f8f4ea;
+  font-family: "MuseoSansCyrl-300", sans-serif;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__divider {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  &__button,
+  &__reset-button {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  &__recovery {
+    margin-left: 1vw;
+  }
+
+    &__error-list {
+    list-style: none;
+    //padding: 0;
+    margin: 0;
+  }
+
+  &__error-item {
+    margin-bottom: 10px;
+  }
+}
+
