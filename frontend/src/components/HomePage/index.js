@@ -15,6 +15,10 @@ import VR4 from '../../img/vr-4.jpg';
 import {Helmet} from "react-helmet";
 import Counter from "./counter";
 
+import tools from '../../img/tools.jpg';
+import home from '../../img/home.jpg';
+import garden from '../../img/garden.jpg';
+import material from '../../img/materials.jpg';
 
 const HomePage = () => {
     /* принимаем картинки из API и ставим в src [номер массива нужной]*/
@@ -65,21 +69,27 @@ const HomePage = () => {
           </Helmet>
           <div className="main-box">
               <div className="main-box__left-img">
-                  <img src={img[0]?.image} alt="Брендбук" className="main-box__img"/>
+                  <img src={tools} alt="Брендбук" className="main-box__img"/>
                   <a className="main-box__box-link" href="/brand/">
-                      БРЕНДБУК
+                      ИНСТРУМЕНТЫ
+                  </a>
+              </div>
+              <div className="main-box__left-img">
+                  <img src={garden} alt="Брендбук" className="main-box__img"/>
+                  <a className="main-box__box-link" href="/brand/">
+                      САД И ОГОРОД
                   </a>
               </div>
               <div className="main-box__middle-img">
-                  <img src={img[1]?.image} alt="Интерьер" className="main-box__img"/>
+                  <img src={home} alt="Интерьер" className="main-box__img"/>
                   <a className="main-box__box-link" href="/interior/">
-                      ИНТЕРЬЕР
+                      ДЛЯ ДОМА
                   </a>
               </div>
               <div className="main-box__right-img">
-                  <img src={img[2]?.image} alt="Фасад" className="main-box__img"/>
+                  <img src={material} alt="Фасад" className="main-box__img"/>
                   <a className="main-box__box-link" href="/facades/">
-                      ФАСАД
+                      ОТДЕЛОЧНЫЕ МАТЕРИАЛЫ
                   </a>
               </div>
           </div>
@@ -90,17 +100,18 @@ const HomePage = () => {
               </div>
               <div className="section-about__right-box reveal">
                   <h1 className="section-about__heading ">
-                      Коммерческий дизайн - это инструмент, создающий условия, при которых продажа будет совершена
+                      Основным видом нашей деятельности является снабжение строительных площадок строительными материалами. М
+                      Мы доставляем строительные материалы на стройки, коттеджи, дачи, дома, дачные участки, в квартиру и т.д.
                   </h1>
                   <p className="section-about__text">
-                      Василий Рыбаков CEO VR Commercial design
+                      Петр I, Директор StroyShop
                   </p>
               </div>
           </section>
 
           <section className="section-process">
               <h2 className="section-process__process-heading reveal fade-left">
-                  КАК МЫ РАБОТАЕМ?
+                  ДОСТАВКА И ОПЛАТА
               </h2>
               <div className="section-process__items-box reveal">
                   <div className="section-process__item-box">
@@ -108,22 +119,24 @@ const HomePage = () => {
                           <img src={VR1} alt="Встреча, определение цели" className="section-process__img"/>
                       </div>
                       <div className="section-process__item-text">
-                      <Counter/>
+                      {/*<Counter/>*/}
                           <h2 className="section-process__text-heading">
-                              Встреча, определение цели
+                              Самовывоз
                           </h2>
                           <p className="section-process__text">
-                              Поговорим о вашем бизнесе, совместно сформулируем задачу, расставим приоритеты и определим средства достижения цели. Вам не обязательно представлять конечный результат, достаточно будет описать свои ожидания.
-                          </p>
+                                2-й Усть-Киргизский тупик,11
+                                пн-пт 9:00-18:00
+                            сб 9:00-15:00</p>
                       </div>
                   </div>
                   <div className="section-process__item-box">
                       <div className="section-process__item-text">
                           <h2 className="section-process__text-heading">
-                              Утверждение технического задания
+                              Доставка автопарком компании
                           </h2>
                           <p className="section-process__text">
-                              Мы составляем план работ, просчитываем их объём и стоимость, разрабатываем тактику исполнения. Каждый этап обязательно согласовывается.
+                              Доставка по г Томску от 600 руб/рейс
+                            Удаленные районы г.Томска (доставка на один адрес) от 800 руб/рейс
                           </p>
                       </div>
                       <div className="section-process__item-img">
@@ -136,11 +149,13 @@ const HomePage = () => {
                       </div>
                       <div className="section-process__item-text">
                           <h2 className="section-process__text-heading">
-                              Реализация
+                              УСЛОВИЯ ОПЛАТЫ
                           </h2>
                           <p className="section-process__text">
-                              В ходе выполнения основных работ мы будем находиться в постоянном диалоге. Это позволит вам следить за процессом и своевременно вносить изменения.
-                          </p>
+                    Наличный расчет
+                    1. При получении товара с водителем-экспедитором.
+                    2. На складе г. Томск, 2-й Усть-Киргизский тупик,11
+                    3. Сб-онлайн.                          </p>
                       </div>
                   </div>
                   <div className="section-process__item-box">
@@ -166,7 +181,7 @@ const HomePage = () => {
                           НАШИ ДОСТИЖЕНИЯ В ЦИФРАХ
                       </h2>
                       <h2 className="section-achievements__text-top">
-                          Улучшаем продажи вашего бизнеса с 2008 года
+                          Продаем с такого то года
                       </h2>
                   </div>
                   <div className="section-achievements__bottom-box reveal">
@@ -231,7 +246,7 @@ const HomePage = () => {
           </section>
           <section className="section-price" id="price" >
               <h2 className="section-price__heading reveal fade-left" >
-                  УСЛУГИ И ЦЕНЫ
+                  СПЕЦТЕХНИКА
               </h2>
               <div className="section-price__box reveal" >
                   <div className="section-price__price-box">

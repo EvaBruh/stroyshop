@@ -26,7 +26,27 @@ const topLinks = [
         class: 'header-box__list-link',
         links: [
             {
-                title: 'САД И ДОМ',
+                title: 'ИНСТРУМЕНТЫ',
+                href:'/brand/',
+            },
+            {
+                title: 'ДЛЯ ДОМА',
+                href:'/brand/',
+            },
+            {
+                title: 'САД-ОГОРОД',
+                href:'/brand/',
+            },
+            {
+                title: 'ОТДЕЛОЧНЫЕ МАТЕРИАЛЫ',
+                href:'/brand/',
+            },
+            {
+                title: 'СТРОЙМАТЕРИАЛЫ',
+                href:'/brand/',
+            },
+/* список внутри списка            {
+                title: 'ИНСТРУМЕНТЫ',
                 href:'/brand/',
                 links: [
                     {title: 'Попопопопоппопопо', href:'/sublink1/'},
@@ -34,22 +54,37 @@ const topLinks = [
                 ]
             },
             {
-                title: 'СТРОЙМАТЕРИАЛ',
+                title: 'ДЛЯ ДОМА',
                 href:'/brand/',
                 links: [
                     {title: 'аоаоаоаоаоааоаоао', href:'/sublink3/'},
                     {title: 'аоаоаоаоаоааоаоао', href:'/sublink4/'},
                 ]
             },
-                        {
-                title: 'ЖИВОТНЫЕ',
+            {
+                title: 'САД-ОГОРОД',
                 href:'/brand/',
                 links: [
                     {title: 'аоа3аоаоа33аоаоао', href:'/sublink3/'},
                     {title: 'аоаоао2аоаоааоаоао', href:'/sublink4/'},
                 ]
             },
-            {title: 'ОГОРОД', href:'/facades/'},
+            {
+                title: 'ОТДЕЛОЧНЫЕ МАТЕРИАЛЫ',
+                href:'/brand/',
+                links: [
+                    {title: 'аоа3аоаоа33аоаоао', href:'/sublink3/'},
+                    {title: 'аоаоао2аоаоааоаоао', href:'/sublink4/'},
+                ]
+            },
+            {
+                title: 'СТРОЙМАТЕРИАЛЫ',
+                href:'/brand/',
+                links: [
+                    {title: 'аоа3аоаоа33аоаоао', href:'/sublink3/'},
+                    {title: 'аоаоао2аоаоааоаоао', href:'/sublink4/'},
+                ]
+            },*/
         ]
     },
         {
@@ -58,13 +93,13 @@ const topLinks = [
             class: 'header-box__list-link',
             links: []
         },
-        {
+/*        {
             title: 'СПЕЦТЕХНИКА',
             href: '/tours/',
             class: "header-box__list-link animation-tours",
             links: []
 
-        },
+        },*/
         {
             title: 'ЛИЧНЫЙ КАБИНЕТ',
             href: '/personal/',
@@ -73,22 +108,10 @@ const topLinks = [
 
         },
         {
-            title: 'ОТЗЫВЫ',
-            href: '/#reviews',
-            class: 'header-box__list-link',
-            links: []
-        },
-        {
             title: 'ОСТАВИТЬ ЗАЯВКУ',
             to: '#',
             class: 'header-box__list-link',
             onClick: () => dispatch(open()),
-            links: []
-        },
-      {
-            title: 'ВАКАНСИИ',
-            href: '/job/',
-            class: 'header-box__list-link',
             links: []
         },
     ]

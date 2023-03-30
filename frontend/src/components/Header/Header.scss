@@ -291,6 +291,7 @@ main {
     display: flex;
     color: white;
     transition: 0.5s;
+    width: 50vw;
   }
 
   .header-box__menu-list.window {
@@ -319,6 +320,12 @@ main {
     padding: 1vw;
     font-size: 1vw;
     cursor: pointer;
+  }
+
+  .header-box__list-catalog {
+    //padding-right: 8vw;
+    font-size: 1vw;
+    font-family: MuseoSansCyrl-300, sans-serif;
   }
 
   .animation-tours {

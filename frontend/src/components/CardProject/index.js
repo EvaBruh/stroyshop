@@ -23,7 +23,7 @@ const CardProject = () => {
     return  (
         <section className="section-project">
             <h2 className="section-project__project-heading">
-                НАШИ ПРОЕКТЫ
+                АКТИВНЫЕ АКЦИИ
             </h2>
             <div className="section-project__project-box">
                 {data && data?.results.map((img, index) => (

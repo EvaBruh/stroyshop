@@ -10,14 +10,14 @@
 
 .drop-links__opened {
     position: absolute;
-    margin-top: 11.2vw;
+    margin-top: 17vw;
     transition: 0.5s;
     opacity: 1;
 }
 
 .drop-links__items {
     display: flex;
-    width: 12vw;
+    width: 10vw;
     flex-direction: column;
     list-style-type: none;
     padding-left: 0;

@@ -5,14 +5,18 @@ import {HashLink} from 'react-router-hash-link';
 
 function LinkWithDropDown(props) {
 
+    let timer;
     const {data} = props;
     const div = useRef()
     const onMouseEnterHandler = () => {
-        div.current?.classList.toggle('drop-links__opened')
+        clearTimeout(timer);
+        div.current?.classList.add('drop-links__opened')
     }
 
     const onMouseLeaveHandler = () => {
-        div.current?.classList.toggle('drop-links__opened')
+        timer = setTimeout(() => {
+            div.current?.classList.remove('drop-links__opened')
+        }, 500); // Задержка в 500 миллисекунд
     }
 
     const onClickHandler = data.onClick ?? null;
@@ -30,32 +34,16 @@ function LinkWithDropDown(props) {
             {data.links.length > 0 && <div className="drop-links" ref={div}>
                 <ul className="drop-links__items">
                     {data.links.map((link, i) => (
-                        <li
-                            className="drop-list__link-item"
-                            key={`${link.href}-${i}`}
-                            onMouseEnter={(e) => e.currentTarget.classList.add('sub-drop-links__opened')}
-                            onMouseLeave={(e) => e.currentTarget.classList.remove('sub-drop-links__opened')}
-                        >
+                        <li className="drop-list__link-item" key={`${link.href}-${i}`}>
                             <a href={link.href} className='drop-list__link'>
                                 {link.title}
-                                {link.links && link.links.length > 0 && <CaretRightOutlined/>}
                             </a>
-                            {link.links && link.links.length > 0 && (
-                                <ul className="sub-drop-links">
-                                    {link.links.map((subLink, j) => (
-                                        <li className="sub-drop-list__link-item" key={`${subLink.href}-${j}`}>
-                                            <a href={subLink.href} className='sub-drop-list__link'>
-                                                {subLink.title}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
                         </li>
                     ))}
                 </ul>
             </div>}
         </li>
+
     )
 }
 

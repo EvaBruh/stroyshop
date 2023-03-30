@@ -4,7 +4,7 @@ from django.contrib.auth.admin import UserAdmin
 from rest_framework_simplejwt.token_blacklist.admin import OutstandingTokenAdmin
 from rest_framework_simplejwt.token_blacklist.models import OutstandingToken
 
-from frontend.models import CustomUser
+from frontend.models import CustomUser, Sale
 
 
 class CustomUserAdmin(UserAdmin):
@@ -27,6 +27,19 @@ class CustomOutstandingTokenAdmin(OutstandingTokenAdmin):
         return True
 
 
+# Sale - отображение главных шести проектов на HomePage
+class SaleAdmin(admin.ModelAdmin):
+
+    class Meta:
+        model = Sale
+
+    readonly_fields = ['helper_card',]
+    list_display = ('id', 'project', 'town', 'description', 'urlProject', 'image')
+    list_display_links = ('id', 'project', 'town', 'description')
+    search_fields = ('id', 'project', 'town', 'description')
+
+
 admin.site.unregister(OutstandingToken)
 admin.site.register(OutstandingToken, CustomOutstandingTokenAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Sale, SaleAdmin)

@@ -1,10 +1,22 @@
 from django.urls import path, re_path, include
+from rest_framework import routers
+from django.conf import settings
+from django.conf.urls.static import static
+
 from . import views, activatemail
 
 from rest_framework_simplejwt.views import (TokenRefreshView,)
 
+
+# Пути на django rest API
+from .api import SaleView
+
+router = routers.SimpleRouter()
+router.register('api/sale', SaleView)
+
 urlpatterns = [
     path('', views.index),
+    path('', include(router.urls)),
     path('api/', include([
         path('token/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
         path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
@@ -31,4 +43,4 @@ urlpatterns = [
     path('login/', views.index),
     path('register/', views.index),
     path('personal/', views.index, name='personal'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -9,6 +9,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from stroyshop.settings import log_dir
 from .activatemail import send_activation_email
+from .models import Sale
 
 User = get_user_model()
 
@@ -101,3 +102,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             logger.error(f'Error in serializers MyTokenObtainPairSerialize - create: {e}')
             raise ValidationError({"error": str(e)})  # Отправка ошибки клиенту
 
+
+# Sale - отображение главных 6 проектов на HomePage
+class SaleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sale
+        fields = ('id', 'project', 'town', 'description', 'image', 'urlProject')

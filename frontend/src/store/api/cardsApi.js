@@ -9,7 +9,7 @@ export const cardsApi = createApi({
     getCards: builder.query({
       query: ({limit, offset}) => ({
         method: 'GET',
-        url: '/api/card/', params: {
+        url: '/api/sale/', params: {
           limit: limit,
           offset: offset
         }
