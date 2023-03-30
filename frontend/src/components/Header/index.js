@@ -27,23 +27,23 @@ const topLinks = [
         links: [
             {
                 title: 'ИНСТРУМЕНТЫ',
-                href:'/brand/',
+                href:'/tools/',
             },
             {
                 title: 'ДЛЯ ДОМА',
-                href:'/brand/',
+                href:'/hometools/',
             },
             {
                 title: 'САД-ОГОРОД',
-                href:'/brand/',
+                href:'/garden/',
             },
             {
                 title: 'ОТДЕЛОЧНЫЕ МАТЕРИАЛЫ',
-                href:'/brand/',
+                href:'/decor/',
             },
             {
                 title: 'СТРОЙМАТЕРИАЛЫ',
-                href:'/brand/',
+                href:'/build/',
             },
 /* список внутри списка            {
                 title: 'ИНСТРУМЕНТЫ',

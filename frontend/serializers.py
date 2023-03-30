@@ -9,7 +9,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from stroyshop.settings import log_dir
 from .activatemail import send_activation_email
-from .models import Sale
+from .models import Sale, ToolCard, HomeCard, GardenCard, DecorCard, BuildCard
 
 User = get_user_model()
 
@@ -103,8 +103,43 @@ class RegisterSerializer(serializers.ModelSerializer):
             raise ValidationError({"error": str(e)})  # Отправка ошибки клиенту
 
 
-# Sale - отображение главных 6 проектов на HomePage
+# Sale - отображение акций
 class SaleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sale
-        fields = ('id', 'project', 'town', 'description', 'image', 'urlProject')
+        fields = '__all__'
+
+
+# Tools - отображение карточек инструментов
+class ToolCardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ToolCard
+        fields = '__all__'
+
+
+# HomeTools - отображение карточек для дома
+class HomeCardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HomeCard
+        fields = '__all__'
+
+
+# Garden - отображение карточек огород/сад
+class GardenCardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GardenCard
+        fields = '__all__'
+
+
+# Decor - отображение карточек отделочных материалов
+class DecorCardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DecorCard
+        fields = '__all__'
+
+
+# Build - отображение карточек стройматериалов
+class BuildCardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BuildCard
+        fields = '__all__'

@@ -1,13 +1,14 @@
 import '../../normalize.css';
-import './CardProject.scss'
+import '../CardProject/CardProject.scss';
 import {useEffect, useLayoutEffect, useRef, useState} from "react";
-import {useLazyGetCardsQuery} from "../../store/api/cardsApi";
+import {useLazyGetBuildQuery} from "../../store/api/buildApi";
 
 const CardProject = () => {
 
     const [limit, setLimit] = useState(6);
     const [offset, setOffset] = useState(0);
-    const [fetchCards, { data }] = useLazyGetCardsQuery();
+    const [fetchCards, { data }] = useLazyGetBuildQuery();
+
     const loadMore = () => {
         setLimit((prevState) => prevState + 3);
     };
@@ -23,7 +24,7 @@ const CardProject = () => {
     return  (
         <section className="section-project">
             <h2 className="section-project__project-heading">
-                АКТИВНЫЕ АКЦИИ
+                СТРОЙМАТЕРИАЛЫ
 
             </h2>
             <div className="section-project__project-box">

@@ -9,10 +9,15 @@ from rest_framework_simplejwt.views import (TokenRefreshView,)
 
 
 # Пути на django rest API
-from .api import SaleView
+from .api import SaleView, ToolView, HomeToolView, GardenView, DecorView, BuildView
 
 router = routers.SimpleRouter()
 router.register('api/sale', SaleView)
+router.register('api/tools', ToolView)
+router.register('api/hometools', HomeToolView)
+router.register('api/garden', GardenView)
+router.register('api/decor', DecorView)
+router.register('api/build', BuildView)
 
 urlpatterns = [
     path('', views.index),
@@ -33,6 +38,11 @@ urlpatterns = [
     path('activate/<uidb64>/<token>/', views.activate, name='activate'),
     re_path(r'^project/\w+', views.index),
     path('tours/', views.index),
+    path('tools/', views.index),
+    path('hometools/', views.index),
+    path('garden/', views.index),
+    path('decor/', views.index),
+    path('build/', views.index),
     path('facades/', views.index),
     path('brand/', views.index),
     path('interior/', views.index),

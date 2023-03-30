@@ -70,25 +70,25 @@ const HomePage = () => {
           <div className="main-box">
               <div className="main-box__left-img">
                   <img src={tools} alt="Брендбук" className="main-box__img"/>
-                  <a className="main-box__box-link" href="/brand/">
+                  <a className="main-box__box-link" href="/tools/">
                       ИНСТРУМЕНТЫ
                   </a>
               </div>
               <div className="main-box__left-img">
                   <img src={garden} alt="Брендбук" className="main-box__img"/>
-                  <a className="main-box__box-link" href="/brand/">
+                  <a className="main-box__box-link" href="/garden/">
                       САД И ОГОРОД
                   </a>
               </div>
               <div className="main-box__middle-img">
                   <img src={home} alt="Интерьер" className="main-box__img"/>
-                  <a className="main-box__box-link" href="/interior/">
+                  <a className="main-box__box-link" href="/hometools/">
                       ДЛЯ ДОМА
                   </a>
               </div>
               <div className="main-box__right-img">
                   <img src={material} alt="Фасад" className="main-box__img"/>
-                  <a className="main-box__box-link" href="/facades/">
+                  <a className="main-box__box-link" href="/decor/">
                       ОТДЕЛОЧНЫЕ МАТЕРИАЛЫ
                   </a>
               </div>

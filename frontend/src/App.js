@@ -7,6 +7,11 @@ import Tours from "./components/Tours";
 import Facades from "./components/Facades";
 import BrandBook from "./components/BrandBook";
 import Interior from "./components/Interior";
+import ToolsPage from "./components/ToolsPage";
+import HomeToolsPage from "./components/HomeToolsPage";
+import GardenPage from "./components/GardenPage";
+import DecorPage from "./components/DecorPage";
+import BuildPage from "./components/BuildPage";
 import Privacy from "./components/Privacy";
 import Terms from "./components/TermsUse";
 import Presentation from "./components/Presentation";
@@ -41,6 +46,11 @@ const App = () => {
                             <Route path="/" element={<HomePage/>}/>
                             <Route path="/project/:projectId" element={<ProjectLink/>}/>
                             <Route path="tours" element={<Tours/>}/>
+                            <Route path="tools" element={<ToolsPage/>}/>
+                            <Route path="hometools" element={<HomeToolsPage/>}/>
+                            <Route path="garden" element={<GardenPage/>}/>
+                            <Route path="decor" element={<DecorPage/>}/>
+                            <Route path="build" element={<BuildPage/>}/>
                             <Route path="facades" element={<Facades/>}/>
                             <Route path="brand" element={<BrandBook/>}/>
                             <Route path="interior" element={<Interior/>}/>

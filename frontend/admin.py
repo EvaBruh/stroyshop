@@ -4,7 +4,9 @@ from django.contrib.auth.admin import UserAdmin
 from rest_framework_simplejwt.token_blacklist.admin import OutstandingTokenAdmin
 from rest_framework_simplejwt.token_blacklist.models import OutstandingToken
 
-from frontend.models import CustomUser, Sale
+from frontend.models import CustomUser, Sale, ToolCard, HomeCard, GardenCard, DecorCard, BuildCard
+
+admin.site.site_header = "StroyShop Admin"
 
 
 class CustomUserAdmin(UserAdmin):
@@ -27,19 +29,84 @@ class CustomOutstandingTokenAdmin(OutstandingTokenAdmin):
         return True
 
 
-# Sale - отображение главных шести проектов на HomePage
+# Sale - отображение акций
 class SaleAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Sale
 
     readonly_fields = ['helper_card',]
-    list_display = ('id', 'project', 'town', 'description', 'urlProject', 'image')
-    list_display_links = ('id', 'project', 'town', 'description')
-    search_fields = ('id', 'project', 'town', 'description')
+    list_display = ('id', 'product', 'price', 'description', 'urlProduct', 'image')
+    list_display_links = ('id', 'product', 'price', 'description')
+    search_fields = ('id', 'product', 'price', 'description')
+
+
+# Tools - инструменты
+class ToolsAdmin(admin.ModelAdmin):
+
+    class Meta:
+        model = ToolCard
+
+    readonly_fields = ['helper_card',]
+    list_display = ('id', 'product', 'price', 'description', 'urlProduct', 'image')
+    list_display_links = ('id', 'product', 'price', 'description')
+    search_fields = ('id', 'product', 'price', 'description')
+
+
+# HomeTools - для дома
+class HomeAdmin(admin.ModelAdmin):
+
+    class Meta:
+        model = HomeCard
+
+    readonly_fields = ['helper_card',]
+    list_display = ('id', 'product', 'price', 'description', 'urlProduct', 'image')
+    list_display_links = ('id', 'product', 'price', 'description')
+    search_fields = ('id', 'product', 'price', 'description')
+
+
+# Garden - сад/огород
+class GardenAdmin(admin.ModelAdmin):
+
+    class Meta:
+        model = GardenCard
+
+    readonly_fields = ['helper_card',]
+    list_display = ('id', 'product', 'price', 'description', 'urlProduct', 'image')
+    list_display_links = ('id', 'product', 'price', 'description')
+    search_fields = ('id', 'product', 'price', 'description')
+
+
+# Decor - отделочные материалы
+class DecorAdmin(admin.ModelAdmin):
+
+    class Meta:
+        model = DecorCard
+
+    readonly_fields = ['helper_card',]
+    list_display = ('id', 'product', 'price', 'description', 'urlProduct', 'image')
+    list_display_links = ('id', 'product', 'price', 'description')
+    search_fields = ('id', 'product', 'price', 'description')
+
+
+# Build - стройматериалы
+class BuildAdmin(admin.ModelAdmin):
+
+    class Meta:
+        model = BuildCard
+
+    readonly_fields = ['helper_card',]
+    list_display = ('id', 'product', 'price', 'description', 'urlProduct', 'image')
+    list_display_links = ('id', 'product', 'price', 'description')
+    search_fields = ('id', 'product', 'price', 'description')
 
 
 admin.site.unregister(OutstandingToken)
 admin.site.register(OutstandingToken, CustomOutstandingTokenAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Sale, SaleAdmin)
+admin.site.register(ToolCard, ToolsAdmin)
+admin.site.register(HomeCard, HomeAdmin)
+admin.site.register(GardenCard, GardenAdmin)
+admin.site.register(DecorCard, DecorAdmin)
+admin.site.register(BuildCard, BuildAdmin)
