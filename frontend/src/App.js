@@ -2,7 +2,7 @@ import React from "react";
 import {Router, Routes, Navigate, Route} from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./components/HomePage";
-import ProjectLink from "./components/Projects";
+import ProductLink from "./components/Products";
 import Tours from "./components/Tours";
 import Facades from "./components/Facades";
 import BrandBook from "./components/BrandBook";
@@ -44,7 +44,7 @@ const App = () => {
                             <Route path="login" element={<Login/>}/>
                             <Route path="register" element={<Register/>}/>
                             <Route path="/" element={<HomePage/>}/>
-                            <Route path="/project/:projectId" element={<ProjectLink/>}/>
+                            <Route path="/product/:productId" element={<ProductLink/>}/>
                             <Route path="tours" element={<Tours/>}/>
                             <Route path="tools" element={<ToolsPage/>}/>
                             <Route path="hometools" element={<HomeToolsPage/>}/>

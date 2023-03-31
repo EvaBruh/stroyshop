@@ -1,10 +1,12 @@
 from django.contrib import admin
 
 from django.contrib.auth.admin import UserAdmin
+from django.http import HttpResponseRedirect
+from django.urls import path
 from rest_framework_simplejwt.token_blacklist.admin import OutstandingTokenAdmin
 from rest_framework_simplejwt.token_blacklist.models import OutstandingToken
 
-from frontend.models import CustomUser, Sale, ToolCard, HomeCard, GardenCard, DecorCard, BuildCard
+from frontend.models import CustomUser, Sale, ToolCard, HomeCard, GardenCard, DecorCard, BuildCard, Product
 
 admin.site.site_header = "StroyShop Admin"
 
@@ -101,6 +103,29 @@ class BuildAdmin(admin.ModelAdmin):
     search_fields = ('id', 'product', 'price', 'description')
 
 
+# Product - делаем страницу на основе данных, проекты на отдельной странице
+class ProductAdmin(admin.ModelAdmin):
+
+    class Meta:
+        model = Product
+
+    readonly_fields = ['helper', 'help_product']
+    list_display = ('name', 'productName', 'description', 'price', 'quantity', 'detail')
+    list_display_links = ('name', 'productName', 'description', 'price', 'quantity', 'detail')
+    search_fields = ('id', 'name', 'productName', 'description', 'price', 'quantity', 'detail', 'textOne', 'textTwo')
+
+    # Кнопка в change_form(режим редачки)
+    def get_urls(self):
+        # метод обработки url, с подстановкой необходимой view.
+        urls = super(ProductAdmin, self).get_urls()
+        custom_urls = [
+            path('get/', self.admin_site.admin_view(self.get_path), name='path_view'), ]
+        return custom_urls + urls
+
+    def get_path(self, request):
+        return HttpResponseRedirect('https://imageoptim.com/online')
+
+
 admin.site.unregister(OutstandingToken)
 admin.site.register(OutstandingToken, CustomOutstandingTokenAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
@@ -110,3 +135,4 @@ admin.site.register(HomeCard, HomeAdmin)
 admin.site.register(GardenCard, GardenAdmin)
 admin.site.register(DecorCard, DecorAdmin)
 admin.site.register(BuildCard, BuildAdmin)
+admin.site.register(Product, ProductAdmin)

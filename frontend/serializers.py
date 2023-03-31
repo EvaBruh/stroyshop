@@ -1,15 +1,17 @@
+import html
 import logging
 import os
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
+from django.utils.html import format_html
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from stroyshop.settings import log_dir
 from .activatemail import send_activation_email
-from .models import Sale, ToolCard, HomeCard, GardenCard, DecorCard, BuildCard
+from .models import Sale, ToolCard, HomeCard, GardenCard, DecorCard, BuildCard, Product
 
 User = get_user_model()
 
@@ -143,3 +145,27 @@ class BuildCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = BuildCard
         fields = '__all__'
+
+
+# Product - странички для продукта
+class ProductSerializer(serializers.ModelSerializer):
+    description = serializers.SerializerMethodField()
+    detail = serializers.SerializerMethodField()
+    textOne = serializers.SerializerMethodField()
+    textTwo = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+    def get_description(self, obj):
+        return format_html(html.unescape(obj.description).replace('\n', '<br>'))
+
+    def get_detail(self, obj):
+        return format_html(html.unescape(obj.detail).replace('\n', '<br>'))
+
+    def get_textOne(self, obj):
+        return format_html(html.unescape(obj.textOne).replace('\n', '<br>'))
+
+    def get_textTwo(self, obj):
+        return format_html(html.unescape(obj.textTwo).replace('\n', '<br>'))

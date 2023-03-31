@@ -1,0 +1,218 @@
+main {
+padding-top: 5vw;
+  .product-page {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "MuseoSansCyrl-300", sans-serif;
+
+    &__image {
+      width: 50%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &__info {
+      width: 50%;
+      padding: 20px;
+
+      & > * {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__name {
+      font-size: 2vw;
+      font-weight: bold;
+    }
+
+    &__description,
+    &__detail,
+    &__extra-info {
+      font-size: 1.5vw;
+    }
+
+    &__quantity,
+    &__price {
+      font-size: 2vw;
+      font-weight: bold;
+    }
+  }}
+
+
+/*main {
+  padding-top: 5vw;
+  ! *! *анимация* ! . reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+
+  .reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .active.fade-left {
+    animation: fade-left 1.5s ease-in;
+  }
+
+  .active.fade-right {
+    animation: fade-right 1.5s ease-in;
+  }
+
+  @keyframes fade-right {
+    0% {
+      transform: translateX(100px);
+
+    }
+    100% {
+      transform: translateX(0);
+
+    }
+  }
+  @keyframes fade-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+.section-projects {
+  @media (max-width: 989px) {
+  .section-projects {
+    &__img {
+      height: 55vh;
+    }
+    &__heading-project {
+      font-size: 3.2vw;
+    }
+    &__text-top {
+      font-size: 2.2vw;
+    }
+    &__text-bot {
+      font-size: 2.2vw;
+    }
+    &__text-left {
+      font-size: 2.2vw;
+    }
+    &__middle-text {
+      font-size: 2.2vw;
+    }
+    &__text-right p {
+      font-size: 2.2vw;
+    }
+  }
+}
+}
+
+.section-projects {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__box-img {
+    position: relative;
+    width: 100%;
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+
+  }
+
+  .img-brightness {
+        filter: brightness(50%)
+  }
+
+  &__box-text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2vw 4vw;
+
+  }
+
+  &__heading-project {
+    font-weight: 600;
+    font-size: 2.5vw;
+    width: 40%;
+  }
+
+  &__box-description {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 200;
+    height: 100%;
+    width: 40%;
+    text-align: right;
+  }
+
+  &__box-description p {
+    padding: 2vw 0;
+  }
+
+  &__text-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: right;
+    font-size: 1.64vw;
+  }
+  &__text-bot {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1.7vw;
+  }
+
+  &__text-left {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    font-weight: 200;
+    font-size: 1.7vw;
+  }
+
+  &__text-left p {
+    width: 50%;
+    line-height: 1.5;
+  }
+
+  &__middle-text {
+    display: flex;
+    text-align: center;
+    font-size: 1.7vw;
+    line-height: 1.5;
+    font-weight: 200;
+  }
+
+  &__middle-text {
+    width: 80%;
+  }
+
+  &__text-right {
+    display: flex;
+    width: 100%;
+    text-align: right;
+    flex-direction: row-reverse;
+  }
+
+  &__text-right p  {
+    width: 60%;
+    font-size: 1.7vw;
+    line-height: 1.5;
+    font-weight: 200;
+  }
+  &__box-text {
+    width: 100%;
+  }
+}*/

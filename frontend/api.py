@@ -1,9 +1,9 @@
 from rest_framework.response import Response
 
-from .models import Sale, ToolCard, HomeCard, GardenCard, DecorCard, BuildCard
+from .models import Sale, ToolCard, HomeCard, GardenCard, DecorCard, BuildCard, Product
 from rest_framework import viewsets, permissions, pagination
 from .serializers import SaleSerializer, ToolCardSerializer, HomeCardSerializer, GardenCardSerializer, \
-    DecorCardSerializer, BuildCardSerializer
+    DecorCardSerializer, BuildCardSerializer, ProductSerializer
 
 
 # Sale - акции скидки
@@ -53,3 +53,13 @@ class BuildView(viewsets.ModelViewSet):
     serializer_class = BuildCardSerializer
     # pagination_class = StandardResultsSetPagination
 
+
+# Product - делаем страницу на основе данных для каждого продукта
+class ProductView(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    http_method_names = ['get']
+    serializer_class = ProductSerializer
+    Response(serializer_class.data, headers={'Content-Type': 'text/html'})
+    # для адреса в api/product/productName <-
+    lookup_field = 'productName'
+    # pagination_class = StandardResultsSetPagination

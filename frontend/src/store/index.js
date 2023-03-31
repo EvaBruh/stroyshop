@@ -10,7 +10,7 @@ import {buildApi} from "./api/buildApi";
 import {pdfApi} from "./api/pdfApi";
 import {jobApi} from "./api/jobApi";
 import {carouselApi} from "./api/carouselApi";
-import {projectsApi} from "./api/projectsApi";
+import {productsApi} from "./api/productsApi";
 
 
 export const index = configureStore({
@@ -25,14 +25,14 @@ export const index = configureStore({
         [buildApi.reducerPath]: buildApi.reducer,
         [pdfApi.reducerPath]: pdfApi.reducer,
         [jobApi.reducerPath]: jobApi.reducer,
-        [projectsApi.reducerPath]: projectsApi.reducer,
+        [productsApi.reducerPath]: productsApi.reducer,
         [carouselApi.reducerPath]: cardsApi.reducer
 
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(
       modalApi.middleware,
       carouselApi.middleware,
-      projectsApi.middleware,
+      productsApi.middleware,
       cardsApi.middleware,
       toolsApi.middleware,
       hometlsApi.middleware,
