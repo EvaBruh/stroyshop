@@ -43,9 +43,24 @@ module.exports = {
                  }]
             },
             {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                config: path.resolve(__dirname, 'postcss.config.js'),
+                            },
+                        },
+                    },
+                ],
+            },
+/*            {
                 test: /\.(css)$/,
                 use: ['style-loader','css-loader']
-            },
+            },*/
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
                 type: "asset/resource",

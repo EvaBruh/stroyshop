@@ -1,4 +1,4 @@
-import Header from "../Header";
+import Navbar from "../Navbar";
 import Footer from "../Footer";
 import {Outlet} from "react-router-dom"
 import ButtonScrollUpPage from "../ButtonScrollUpPage";
@@ -8,7 +8,7 @@ import '../../normalize.css'
 const Layout = () => {
     return(
         <>
-            <Header />
+            <Navbar />
             <Outlet />
             <Footer />
             <ButtonScrollUpPage />

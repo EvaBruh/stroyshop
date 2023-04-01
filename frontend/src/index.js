@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import {index} from "./store";
 import {Provider} from "react-redux";
-import './normalize.css'
+//import './normalize.css';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

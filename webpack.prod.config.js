@@ -46,8 +46,19 @@ module.exports = {
                 }],
             },
             {
-                test: /\.(css)$/i,
-                use: [MiniCssExtractPlugin.loader,'css-loader']
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                config: path.resolve(__dirname, 'postcss.config.js'),
+                            },
+                        },
+                    },
+                ],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
