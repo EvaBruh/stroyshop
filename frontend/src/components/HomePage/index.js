@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../normalize.css';
 import './HomePage.scss';
-import VRFace from "../../img/Face-Vr.png";
+import VRFace from "../../img/ShopLogo.png";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import CardProject from "../CardProject";
@@ -88,8 +88,8 @@ const HomePage = () => {
               </div>
               <div className="main-box__right-img">
                   <img src={material} alt="Фасад" className="main-box__img"/>
-                  <a className="main-box__box-link" href="/decor/">
-                      ОТДЕЛОЧНЫЕ МАТЕРИАЛЫ
+                  <a className="main-box__box-link" href="/materials/">
+                      МАТЕРИАЛЫ
                   </a>
               </div>
           </div>

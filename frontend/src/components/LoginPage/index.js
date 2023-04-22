@@ -4,6 +4,7 @@ import {Navigate} from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import RecoveryPassword from '../RecoveryPassword';
 import './login.scss';
+import '../../normalize.css';
 
 
 const Login = () => {

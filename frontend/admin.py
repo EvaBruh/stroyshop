@@ -110,9 +110,9 @@ class ProductAdmin(admin.ModelAdmin):
         model = Product
 
     readonly_fields = ['helper', 'help_product']
-    list_display = ('name', 'productName', 'description', 'price', 'quantity', 'detail')
-    list_display_links = ('name', 'productName', 'description', 'price', 'quantity', 'detail')
-    search_fields = ('id', 'name', 'productName', 'description', 'price', 'quantity', 'detail', 'textOne', 'textTwo')
+    list_display = ('name', 'productName', 'description', 'price', 'detail')
+    list_display_links = ('name', 'productName', 'description', 'price', 'detail')
+    search_fields = ('id', 'name', 'productName', 'description', 'price', 'detail', 'textOne', 'textTwo')
 
     # Кнопка в change_form(режим редачки)
     def get_urls(self):

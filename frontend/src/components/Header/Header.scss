@@ -126,7 +126,7 @@ main {
       align-items: center;
     }
     &-box__logo-img {
-      height: 5.5vw;
+      height: 9.7vw;
     }
 
     &-box__contacts-link {
@@ -136,7 +136,7 @@ main {
     }
 
     &-box__contacts-phone {
-      width: 4vw;
+      width: 13vw;
     }
 
 
@@ -150,12 +150,12 @@ main {
     &-box__logo:after {
       display: none;
     }
-    &-box__tours {
+/*    &-box__tours {
       color: white;
       text-decoration: none;
       font-size: 2.8vw;
       animation: pulsing 2s infinite;
-    }
+    }*/
   }
 }
 
@@ -170,7 +170,7 @@ main {
       align-items: center;
     }
     &-box__logo-img {
-      height: 3vw;
+      height: 5vw;
     }
 
     &-box__contacts-link {
@@ -219,6 +219,7 @@ main {
   font-family: 'MuseoSansCyrl-300', sans-serif;
   padding-left: 2vw;
   padding-right: 2vw;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .header-box__img {
@@ -291,7 +292,7 @@ main {
     display: flex;
     color: white;
     transition: 0.5s;
-    width: 50vw;
+    //width: 50vw;
   }
 
   .header-box__menu-list.window {

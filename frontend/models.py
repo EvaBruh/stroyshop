@@ -27,14 +27,19 @@ class Product(models.Model):
                                    help_text='Имя для ссылки. Пример: gvozdi -> получаем: stroyshop.ru/product/gvozdi')
     description = models.TextField(default='<p> Абзац </p>\n', blank=True, max_length=3000, verbose_name='Описание', help_text='3000 символов.')
     price = models.PositiveIntegerField(default=0, verbose_name='Цена')
-    quantity = models.PositiveIntegerField(default=0, verbose_name='Количество')
     detail = models.TextField(default='<p> Абзац </p>\n <ul>\n<li>Пункт</li>\n</ul>\n', max_length=2000, verbose_name='Характеристики', help_text='2000 символов.')
     textOne = models.TextField(default='<p> Абзац </p>\n', max_length=2000, verbose_name='Доп. текст, 2000 символов.',
                                         help_text='Текст после первой картинки. Сверху, над именем проекта.')
     textTwo = models.TextField(default='<p> Абзац </p>\n', max_length=2000, verbose_name='Доп. текст, 2000 символов.',
                                         help_text='Текст после первой картинки. Снизу, под именем проекта.')
-    image1 = models.ImageField(blank=True, verbose_name='Фотокарточка',
-                               help_text='Рекомендуемое разрешение - 2k. На Vanlaar для 1 фото стоит 2508х1672')
+
+    image1 = models.ImageField(blank=True, verbose_name='Фотокарточка 1',
+                               help_text='Рекомендуемое разрешение - 2k.')
+    image2 = models.ImageField(blank=True, verbose_name='Фотокарточка 2',
+                               help_text='Рекомендуемое разрешение - 2k.')
+    image3 = models.ImageField(blank=True, verbose_name='Фотокарточка 3',
+                               help_text='Рекомендуемое разрешение - 2k.')
+
     helper = models.CharField(max_length=500, verbose_name='ПРИМЕЧАНИЕ',
                               default='НЕ ИСПОЛЬЗУЙТЕ ОГРОМНЫЕ КАРТИНКИ! Ниже кнопка для оптимизации. Далее на ПК откройте картинку -> ПКМ -> изменить размер изображения, выберите пункт 3.')
     help_product = models.CharField(max_length=1000, verbose_name='ПРИМЕЧАНИЕ',

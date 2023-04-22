@@ -45,6 +45,7 @@ urlpatterns = [
     path('hometools/', views.index),
     path('garden/', views.index),
     path('decor/', views.index),
+    path('materials/', views.index),
     path('build/', views.index),
     path('facades/', views.index),
     path('brand/', views.index),

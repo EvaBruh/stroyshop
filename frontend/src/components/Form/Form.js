@@ -5,7 +5,7 @@ import {useSendRequestMutation} from "../../store/api/modulApi.js";
 import '../../normalize.css'
 import Modal from 'antd/lib/modal';
 import './Form.scss';
-import VRFace from '../../img/VasyaBezFona.png'
+import VRFace from '../../img/ShopLogo.png';
 
 const getOpened = (state) => state.modal.opened
 
@@ -78,7 +78,7 @@ const Form = () => {
                 <div className="form-box__right">
                     <div className="form-box__text-box">
                         <h2 className="form-box__heading">
-                            Заявка на обратный звонок от Василия.
+                            Заявка на обратный звонок.
                         </h2>
                         <p className="form-box__about">
                             Наш график работы:

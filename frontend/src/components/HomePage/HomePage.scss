@@ -1,4 +1,11 @@
 main {
+
+    @media (max-width: 990px)  {
+  main {
+    padding-top: 10vw;
+  }
+
+}
     max-width: 100%;
     /*анимация*/
     .reveal{
@@ -68,14 +75,19 @@ main {
             &__right-img {
                 height: 40vh;
             }
+            &__box-link {
+            padding-left: 1rem;
+            font-size: 1.7rem;
         }
+        }
+
     }
 
     &__left-img {
         display: flex;
         position: relative;
         overflow: hidden;
-        height: 93vh;
+        height: 100vh;
         width: 33.3%;
         transition: 1s
     }
@@ -84,7 +96,7 @@ main {
         display: flex;
         position: relative;
         overflow: hidden;
-        height: 93vh;
+        height: 100vh;
         width: 33.3%;
         transition: 1s
     }
@@ -93,7 +105,7 @@ main {
         display: flex;
         position: relative;
         overflow: hidden;
-        height: 93vh;
+        height: 100vh;
         width: 33.3%;
         transition: 1s
     }

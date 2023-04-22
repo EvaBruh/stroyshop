@@ -1,6 +1,6 @@
 import '../../normalize.css';
 import './Header.scss';
-import VrLogo from '../../img/logonew3.png';
+import VrLogo from '../../img/ShopLogo.png';
 import Phone from '../../img/phone.png';
 import LinkWithDropDown from "../LinkWithDropDown/index";
 import { useDispatch } from "react-redux";
@@ -20,7 +20,7 @@ const Header = () => {
     const dispatch = useDispatch();
     const {pathname} = useLocation()
 const topLinks = [
-    {
+    /*{
         title: 'КАТАЛОГ',
         href: '#',
         class: 'header-box__list-link',
@@ -45,7 +45,7 @@ const topLinks = [
                 title: 'СТРОЙМАТЕРИАЛЫ',
                 href:'/build/',
             },
-/* список внутри списка            {
+/!* список внутри списка            {
                 title: 'ИНСТРУМЕНТЫ',
                 href:'/brand/',
                 links: [
@@ -84,15 +84,39 @@ const topLinks = [
                     {title: 'аоа3аоаоа33аоаоао', href:'/sublink3/'},
                     {title: 'аоаоао2аоаоааоаоао', href:'/sublink4/'},
                 ]
-            },*/
+            },*!/
         ]
+    },*/
+    {
+        title: 'О НАС',
+        href: '/#price',
+        class: 'header-box__list-link',
+        links: []
     },
-        {
-            title: 'О НАС',
-            href: '/#price',
-            class: 'header-box__list-link',
-            links: []
-        },
+    {
+        title: 'ИНСТРУМЕНТЫ',
+        href: '/tools',
+        class: 'header-box__list-link',
+        links: []
+    },
+    {
+        title: 'САД И ОГОРОД',
+        href: '/garden',
+        class: 'header-box__list-link',
+        links: []
+    },
+    {
+        title: 'ДЛЯ ДОМА',
+        href: '/hometools',
+        class: 'header-box__list-link',
+        links: []
+    },
+    {
+        title: 'МАТЕРИАЛЫ',
+        href: '/materials',
+        class: 'header-box__list-link',
+        links: []
+    },
 /*        {
             title: 'СПЕЦТЕХНИКА',
             href: '/tours/',
@@ -100,13 +124,13 @@ const topLinks = [
             links: []
 
         },*/
-        {
+/*        {
             title: 'ЛИЧНЫЙ КАБИНЕТ',
             href: '/personal/',
             class: "header-box__list-link",
             links: []
 
-        },
+        },*/
         {
             title: 'ОСТАВИТЬ ЗАЯВКУ',
             to: '#',
@@ -132,13 +156,12 @@ const topLinks = [
                   </span>
                 </label>
                 <ul className="menu__box">
-                    <li><a className="menu__item" href="/brand/">Брендбук</a></li>
-                    <li><a className="menu__item" href="/interior/">Интерьер</a></li>
-                    <li><a className="menu__item" href="/facades/">Фасад</a></li>
-                    <li><a className="menu__item" href="/tours/">3D Туры</a></li>
-                    <li><a className="menu__item" href="/job/">Вакансии</a></li>
-                    <li><a className="menu__item" href="/protected/">Личный кабинет</a></li>
-                    <li><a className="menu__item" href="/#price">Услуги и цены</a></li>
+
+{/*                    <li><a className="menu__item" href="/protected/">Личный кабинет</a></li>*/}
+                    <li><a className="menu__item" href="/tools/">Инструменты</a></li>
+                    <li><a className="menu__item" href="/hometools/">Для дома</a></li>
+                    <li><a className="menu__item" href="/garden/">Сад и огород</a></li>
+                    <li><a className="menu__item" href="/materials/">Материалы</a></li>
                     <li><a className="menu__item" onClick={() => dispatch(open())}>Оставить заявку</a></li>
                 </ul>
             </div>
@@ -146,7 +169,7 @@ const topLinks = [
                 <a className="header-box__logo" href="/" style={style}>
                     <img src={VrLogo} alt="#" className="header-box__logo-img"/>
                 </a>
-                <LinkA/>
+                {/*<LinkA/>*/}
             </div>
             <div className="header-box__menu">
                 <ul className="header-box__menu-list">
@@ -155,18 +178,18 @@ const topLinks = [
             </div>
             <div className="header-box__contacts">
                 <div className="header-box__contacts-links">
-                    <a href="tel:+79009215777" className="header-box__contacts-link svg-phone">
+                    <a href="tel:+777777777" className="header-box__contacts-link svg-phone">
                         <img src={Phone} alt="" className="header-box__contacts-phone"/>
                     </a>
-                    <a href="tel:+79009215777" className="header-box__contacts-link number-phone">
-                        +7 900 921 5777
+                    <a href="tel:+777777777" className="header-box__contacts-link number-phone">
+                        +777777777
                     </a>
                 </div>
             </div>
             <div className="header-box__contacts">
                 <div className="header-box__contacts-links">
                     <div className='header-box__contacts-login'>
-                        {!user && (
+{/*                        {!user && (
                             <>
                                 <a href="/login" className="header-box__contacts-link">Войти</a>
                                 <a href="/register" className="header-box__contacts-link">Регистрация</a>
@@ -176,7 +199,7 @@ const topLinks = [
                             <a href="#" className="header-box__contacts-link">
                                 <Userinfo user={user}/>
                             </a>
-                        )}
+                        )}*/}
                     </div>
                 </div>
             </div>

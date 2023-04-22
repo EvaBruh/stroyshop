@@ -1,9 +1,14 @@
 main {
-padding-top: 5vw;
+
   .product-page {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row-reverse;
     font-family: "MuseoSansCyrl-300", sans-serif;
+    padding-top: 7vw;
+
+    &__images {
+
+    }
 
     &__image {
       width: 50%;

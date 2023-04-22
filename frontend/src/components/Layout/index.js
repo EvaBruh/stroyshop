@@ -4,11 +4,12 @@ import {Outlet} from "react-router-dom"
 import ButtonScrollUpPage from "../ButtonScrollUpPage";
 import React from "react";
 import '../../normalize.css'
+import Header from "../Header";
 
 const Layout = () => {
     return(
         <>
-            <Navbar />
+            < Header/>
             <Outlet />
             <Footer />
             <ButtonScrollUpPage />
