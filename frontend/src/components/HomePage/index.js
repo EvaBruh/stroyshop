@@ -244,7 +244,7 @@ const HomePage = () => {
                   </div>
               </div>
           </section>
-          <section className="section-price" id="price" >
+{/*          <section className="section-price" id="price" >
               <h2 className="section-price__heading reveal fade-left" >
                   СПЕЦТЕХНИКА
               </h2>
@@ -330,7 +330,7 @@ const HomePage = () => {
               <section className='section-feedback' >
                   <SLider/>
               </section>
-          </section>
+          </section>*/}
       </main>
     )
 }

@@ -8,7 +8,7 @@ function Footer () {
 
     return (
         <footer className="footer">
-            <div className="footer-box">
+            <div  id='map' className="footer-box">
                 <div className="footer-box__left-box">
                     <iframe
                         src="https://yandex.ru/map-widget/v1/?um=constructor%3A7f164c1660eced123104680eca30bd7c5ae25701b28a3a3a777c0a06f06d3788&amp;source=constructor"
@@ -37,15 +37,12 @@ function Footer () {
 
                     </div>
                     <div className="footer-box__social-box">
-                        <a href="https://t.me/vrcommercial">
+{/*                        <a href="https://t.me/vrcommercial">
                             <img src={telegram} alt="#" className="footer-box__social-icon"/>
                         </a>
                         <a href="https://vk.com/vasiliyrybakov">
                             <img src={vk} alt="#" className="footer-box__social-icon"/>
-                        </a>
-                        <a href="https://pin.it/79gcj5p">
-                            <img src={pinterest} alt="#" className="footer-box__social-icon"/>
-                        </a>
+                        </a>*/}
                     </div>
                 </div>
             </div>

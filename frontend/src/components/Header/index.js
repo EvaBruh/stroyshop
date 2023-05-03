@@ -87,12 +87,12 @@ const topLinks = [
             },*!/
         ]
     },*/
-    {
+/*    {
         title: 'О НАС',
         href: '/#price',
         class: 'header-box__list-link',
         links: []
-    },
+    },*/
     {
         title: 'ИНСТРУМЕНТЫ',
         href: '/tools',

@@ -1,5 +1,5 @@
 
 
 
-const token = "5965019765:AAFsUZBeQwdfmvnEblKs9E3tvohS6UInOeM";
-const idChat = "-5608986360";
+const token = "6246801356:AAHpq8rrhHXBuM97QCLStJ0E5f9hLr3pyb8";
+const idChat = "-926634969";

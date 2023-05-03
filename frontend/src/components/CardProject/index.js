@@ -46,7 +46,7 @@ const CardProject = () => {
                             </div>
                         </div>
                         <div className="section-project__project-description">
-                            <p className="section-project__description-info">{img.product}, {img.saletime}</p>
+                            <p className="section-project__description-info">{img.product}, {img.saletime}, {img.price}</p>
                             {/*<p className="section-project__description-city">{img.town}</p>*/}
                         </div>
                     </div>

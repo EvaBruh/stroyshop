@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
-const API_TOKEN = '5965019765:AAFsUZBeQwdfmvnEblKs9E3tvohS6UInOeM'
-const CHAT_ID = -5608986360
+const API_TOKEN = '6246801356:AAHpq8rrhHXBuM97QCLStJ0E5f9hLr3pyb8'
+const CHAT_ID = -926634969
 
 const baseQuery = fetchBaseQuery({
   baseUrl: `https://api.telegram.org/bot${API_TOKEN}/`

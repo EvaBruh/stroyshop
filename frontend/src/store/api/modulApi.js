@@ -1,10 +1,10 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
-const CHAT_ID = -1001798497559
+const CHAT_ID = 926634969
 
 export const modalApi = createApi({
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://api.telegram.org/bot5965019765:AAFsUZBeQwdfmvnEblKs9E3tvohS6UInOeM'
+        baseUrl: 'https://api.telegram.org/bot6246801356:AAHpq8rrhHXBuM97QCLStJ0E5f9hLr3pyb8'
     }),
     endpoints: main => ({
         sendRequest: main.mutation({
