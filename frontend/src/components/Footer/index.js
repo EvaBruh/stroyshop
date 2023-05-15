@@ -19,20 +19,26 @@ function Footer () {
                     <div className="footer-box__contact-box">
                         <div className="footer-box__contact-links">
                             <h1 className="footer-box__contact-heading">НАШИ КОНТАКТЫ</h1>
-                            <a href="tel:+79913917892" className="footer-box__contacts-number">
-                                +7 900 921 57 77
+                            <a href="tel:+79609057096" className="footer-box__contacts-number">
+                                +7 960 905 70 96
                             </a>
-                            <a href="mailto: vr_dogovor@mail.ru" className="footer-box__contacts-email">
-                                vr_dogovor@mail.ru
+                            <a href="tel:+79138733682" className="footer-box__contacts-number">
+                                +7 913 873 36 82
+                            </a>
+                            <a href="mailto: kamb-tom@yandex.ru" className="footer-box__contacts-email">
+                                kamb-tom@yandex.ru
                             </a>
                         </div>
                         <div className="footer-box__contact-links">
                             <h1 className="footer-box__contact-heading">
-                            ЦЕНТРАЛЬНЫЙ ОФИС
+                            НАШ АДРЕС
                               </h1>
                             <a href="https://goo.gl/maps/FkusbfJaQ3GjJMu89" className="footer-box__contacts-city">
-                                г. Томск, пр. Ленина 85, 2 этаж
+                                Кемерово, Плешки Заводской р-н, Таврическая 23-А
                             </a>
+                            <p>
+                                График: пн-пт: с 9 до 21, сб-вс: с 10 до 19
+                            </p>
                         </div>
 
                     </div>

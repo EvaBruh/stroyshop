@@ -8,10 +8,10 @@ import CardProject from "../CardProject";
 import DNS1 from '../../img/DNS1.jpg';
 import SLider from '../SliderFeedBack';
 import {reveal} from "../../functions/ScrollAnimation";
-import VR1 from '../../img/vr-1.jpg';
-import VR2 from '../../img/vr-2.jpg';
-import VR3 from '../../img/vr-3.jpg';
-import VR4 from '../../img/vr-4.jpg';
+import VR1 from '../../img/уголь.jpg';
+import VR2 from '../../img/кирпич.jpg';
+import VR3 from '../../img/каска.jpg';
+import VR4 from '../../img/кирпи2.jpg';
 import {Helmet} from "react-helmet";
 import Counter from "./counter";
 
@@ -36,58 +36,34 @@ const HomePage = () => {
     /* анимация */
     reveal();
 
-    function CounterBrand({ valBrand, time }) {
-        const [ currVal, setCurrVal ] = useState(0);
-        valBrand = 1000;
-        useEffect(() => {
-            currVal !== valBrand && setTimeout(setCurrVal, 9, currVal + 1);
-        }, [ currVal ]);
-        return <div className="section-achievements__heading-bottom" > { "> " }{currVal}{" идей"}  </div>;
-    }
-    function CounterM2({ valShops, time }) {
-        const [ currVal, setCurrVal ] = useState(0);
-        valShops = 80000;
-        useEffect(() => {
-            currVal !== valShops && setTimeout(setCurrVal, 1, currVal + 1);
-        }, [ currVal ]);
-        return <div className="section-achievements__heading-bottom" >{ "> " }{currVal}{" м²\n"} </div>;
-    }
-    function CounterWork({ valWork, time }) {
-        const [ currVal, setCurrVal ] = useState(0);
-        valWork = 100000;
-        useEffect(() => {
-            currVal !== valWork && setTimeout(setCurrVal, 1, currVal + 1);
-        }, [ currVal ]);
-        return <div className="section-achievements__heading-bottom" >{ "> " }{currVal}{" часов"}  </div>;
-    }
 
     return (
       <main>
           <Helmet>
               <title>VR Commercial</title>
-              <meta name="description" content="VR Василий Рыбаков Коммерческий дизайн Фасады Брендбук" />
+              <meta name="description" content="Хозстроймаг Кемерово стройматериалы" />
           </Helmet>
           <div className="main-box">
               <div className="main-box__left-img">
-                  <img src={tools} alt="Брендбук" className="main-box__img"/>
+                  <img src={tools} alt="ИНСТРУМЕНТЫ" className="main-box__img"/>
                   <a className="main-box__box-link" href="/tools/">
                       ИНСТРУМЕНТЫ
                   </a>
               </div>
               <div className="main-box__left-img">
-                  <img src={garden} alt="Брендбук" className="main-box__img"/>
+                  <img src={garden} alt="САД И ОГОРОД" className="main-box__img"/>
                   <a className="main-box__box-link" href="/garden/">
                       САД И ОГОРОД
                   </a>
               </div>
               <div className="main-box__middle-img">
-                  <img src={home} alt="Интерьер" className="main-box__img"/>
+                  <img src={home} alt="ДЛЯ ДОМА" className="main-box__img"/>
                   <a className="main-box__box-link" href="/hometools/">
                       ДЛЯ ДОМА
                   </a>
               </div>
               <div className="main-box__right-img">
-                  <img src={material} alt="Фасад" className="main-box__img"/>
+                  <img src={material} alt="МАТЕРИАЛЫ" className="main-box__img"/>
                   <a className="main-box__box-link" href="/materials/">
                       МАТЕРИАЛЫ
                   </a>
@@ -96,15 +72,14 @@ const HomePage = () => {
           <CardProject />
           <section className="section-about">
               <div className="section-about__left-box ">
-                  <img src={VRFace} alt="Василий Рыбаков" className="section-about__img"/>
+                  <img src={VRFace} alt="Хозстроймаг" className="section-about__img"/>
               </div>
               <div className="section-about__right-box reveal">
                   <h1 className="section-about__heading ">
-                      Основным видом нашей деятельности является снабжение строительных площадок строительными материалами. М
-                      Мы доставляем строительные материалы на стройки, коттеджи, дачи, дома, дачные участки, в квартиру и т.д.
+                      Основным видом нашей деятельности является розничная продажа материалов для дома, строительства и разного рода инструментария.
                   </h1>
                   <p className="section-about__text">
-                      Петр I, Директор StroyShop
+                      Давно в деле!
                   </p>
               </div>
           </section>
@@ -116,7 +91,7 @@ const HomePage = () => {
               <div className="section-process__items-box reveal">
                   <div className="section-process__item-box">
                       <div className="section-process__item-img">
-                          <img src={VR1} alt="Встреча, определение цели" className="section-process__img"/>
+                          <img src={VR1} alt="График" className="section-process__img"/>
                       </div>
                       <div className="section-process__item-text">
                       {/*<Counter/>*/}
@@ -124,9 +99,9 @@ const HomePage = () => {
                               Самовывоз
                           </h2>
                           <p className="section-process__text">
-                                2-й Усть-Киргизский тупик,11
-                                пн-пт 9:00-18:00
-                            сб 9:00-15:00</p>
+                                Кемерово, Плешки Заводской р-н, Таврическая 23-А
+                                пн-пт с 9:00-21:00
+                                сб-вс с 10:00-19:00</p>
                       </div>
                   </div>
                   <div className="section-process__item-box">
@@ -135,12 +110,11 @@ const HomePage = () => {
                               Доставка автопарком компании
                           </h2>
                           <p className="section-process__text">
-                              Доставка по г Томску от 600 руб/рейс
-                            Удаленные районы г.Томска (доставка на один адрес) от 800 руб/рейс
+                              По доставке материала уточните по телефону
                           </p>
                       </div>
                       <div className="section-process__item-img">
-                          <img src={VR2} alt="Утверждение технического задания" className="section-process__img"/>
+                          <img src={VR2} alt="Доставка" className="section-process__img"/>
                       </div>
                   </div>
                   <div className="section-process__item-box">
@@ -152,19 +126,19 @@ const HomePage = () => {
                               УСЛОВИЯ ОПЛАТЫ
                           </h2>
                           <p className="section-process__text">
-                    Наличный расчет
-                    1. При получении товара с водителем-экспедитором.
-                    2. На складе г. Томск, 2-й Усть-Киргизский тупик,11
-                    3. Сб-онлайн.                          </p>
+                    Расчёт
+                    1. При получении товара с водителем.
+                    2. На складе наличными или переводом.
+                    3. По карте.                         </p>
                       </div>
                   </div>
                   <div className="section-process__item-box">
                       <div className="section-process__item-text">
                           <h2 className="section-process__text-heading">
-                              Запуск проекта
+                              Множество качественных товаров
                           </h2>
                           <p className="section-process__text">
-                              Самый долгожданный этап, на котором выполненный проект будет сдан вам со всей необходимой технической документацией.
+                              Наша команда очень трепетно относится к поставщикам и следит за качеством товара.
                           </p>
                       </div>
                       <div className="section-process__item-img">
@@ -173,7 +147,7 @@ const HomePage = () => {
                   </div>
               </div>
           </section>
-          <section className="section-achievements" id="achievements">
+{/*          <section className="section-achievements" id="achievements">
               <img src={DNS1} alt="#" className="section-achievements__img"/>
               <div className="section-achievements__box-text">
                   <div className="section-achievements__heading-box reveal">
@@ -243,7 +217,7 @@ const HomePage = () => {
                       </div>
                   </div>
               </div>
-          </section>
+          </section>*/}
 {/*          <section className="section-price" id="price" >
               <h2 className="section-price__heading reveal fade-left" >
                   СПЕЦТЕХНИКА

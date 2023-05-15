@@ -22,12 +22,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hst#$u!w59*6_x3uxi8_+pl!u1h@j$s5t25ugq4yk-tcpim(r-'
+env = environ.Env
+
+# reading .env file
+environ.Env.read_env()
+
+SECRET_KEY = env()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['kambtom.ru', 'kambtom.ru/', 'www.kambtom.ru/', 'https://kambtom.ru', 'http://kambtom.ru']
 
 # настройки logger
 log_dir = 'logs'
@@ -126,18 +131,24 @@ SIMPLE_JWT = {
 CORS_ORIGIN_WHITELIST = ['http://localhost:3000',
                          'http://localhost:8000',
                          'http://127.0.0.1:8000',
-                         "http://192.168.0.114:8000"
-                         'http://127.0.0.1:3000']
+                         "http://192.168.0.114:8000",
+                         'http://127.0.0.1:3000',
+                         'https://kambtom.ru',
+                         'http://kambtom.ru',
+                         'https://www.kambtom.ru']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8000",
     "http://192.168.0.114:8000",
+    'https://kambtom.ru',
+    'http://kambtom.ru',
+    'https://www.kambtom.ru'
 ]
 
 CORS_ALLOW_METHODS = [
     'POST',
-
+    'GET'
 ]
 
 CORS_ALLOW_HEADERS = [
@@ -179,8 +190,11 @@ WSGI_APPLICATION = 'stroyshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u2058924_default',
+        'USER': 'u2058924_default',
+        'PASSWORD': '5brX58Br72AC4ivS',
+        'HOST': 'localhost',
     }
 }
 
@@ -219,8 +233,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 #STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, "frontend/src/img/"),
 #]
@@ -240,6 +254,6 @@ APPEND_SLASH = True
 #  файл cookie будет помечен как «безопасный», что означает,
 #  что браузеры могут гарантировать, что файл cookie отправляется только через соединение HTTPS.
 
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 

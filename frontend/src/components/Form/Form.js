@@ -84,10 +84,10 @@ const Form = () => {
                             Наш график работы:
                         </p>
                         <p className="form-box__about">
-                            Понедельник - пятница, сб-вс вых.
+                            Понедельник - пятница c 9 до 21
                         </p>
                         <p className="form-box__about">
-                            с 9:00 до 18:00
+                            Суббота - воскресенье с 10 до 19
                         </p>
                     </div>
                     <img src={VRFace} alt="" className="form-box__right-img"/>

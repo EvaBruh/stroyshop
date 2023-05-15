@@ -9,14 +9,14 @@ const Terms = () => {
     return (
         <div className='section-terms'>
             <Helmet>
-                <title>VR Соглашение</title>
-                <meta name="description" content="Коммерческий дизайн Фасады Брендбук Интерьер " />
+                <title>Соглашение</title>
+                <meta name="description" content="Хозстроймаг" />
             </Helmet>
             <h2 className='section-terms__head'>Пользовательское соглашение</h2>
             <div className='section-terms__text-box'>
-                <p className='section-terms__text'>Настоящее Пользовательское Соглашение (Далее Соглашение) регулирует отношения между vasilyrybakov.online (или Администрация) с одной стороны и пользователем сайта с другой.</p>
-                <p className='section-terms__text'>Сайт vasilyrybakov.online не является средством массовой информации. Используя сайт, Вы соглашаетесь с условиями данного соглашения.
-                    Если Вы не согласны с условиями данного соглашения, не используйте сайт vasilyrybakov.online!</p>
+                <p className='section-terms__text'>Настоящее Пользовательское Соглашение (Далее Соглашение) регулирует отношения между kambtom.ru (или Администрация) с одной стороны и пользователем сайта с другой.</p>
+                <p className='section-terms__text'>Сайт kambtom.ru не является средством массовой информации. Используя сайт, Вы соглашаетесь с условиями данного соглашения.
+                    Если Вы не согласны с условиями данного соглашения, не используйте сайт kambtom.ru!</p>
                 <h3 className='section-terms__heading'>Предмет соглашения</h3>
                 <p className='section-terms__text'>Администрация предоставляет пользователю право на размещение на сайте следующей информации: Текстовой информации и ссылок на материалы, размещенные на других сайтах.</p>
                 <h3 className='section-terms__heading'>Пользователь имеет право:</h3>
