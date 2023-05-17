@@ -13,6 +13,7 @@ import logging
 import os
 from datetime import timedelta
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,9 +31,10 @@ environ.Env.read_env()
 SECRET_KEY = env()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['kambtom.ru', 'kambtom.ru/', 'www.kambtom.ru/', 'https://kambtom.ru', 'http://kambtom.ru']
+ALLOWED_HOSTS = ['kambtom.ru', 'kambtom.ru/', 'www.kambtom.ru/', 'https://kambtom.ru', 'http://kambtom.ru',
+                 '127.0.0.1:8000', '127.0.0.1']
 
 # настройки logger
 log_dir = 'logs'
@@ -189,12 +191,9 @@ WSGI_APPLICATION = 'stroyshop.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u2058924_default',
-        'USER': 'u2058924_default',
-        'PASSWORD': '5brX58Br72AC4ivS',
-        'HOST': 'localhost',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "db.sqlite3",
     }
 }
 
@@ -239,7 +238,7 @@ STATIC_ROOT = 'static/'
 #    os.path.join(BASE_DIR, "frontend/src/img/"),
 #]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '../frontend/media')
+MEDIA_ROOT = 'media/'
 MEDIA_URL = '/media/'
 
 # Default primary key field type

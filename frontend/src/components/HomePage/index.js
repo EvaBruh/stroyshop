@@ -40,7 +40,7 @@ const HomePage = () => {
     return (
       <main>
           <Helmet>
-              <title>VR Commercial</title>
+              <title>kambtom</title>
               <meta name="description" content="Хозстроймаг Кемерово стройматериалы" />
           </Helmet>
           <div className="main-box">

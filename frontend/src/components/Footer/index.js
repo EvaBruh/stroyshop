@@ -11,7 +11,7 @@ function Footer () {
             <div  id='map' className="footer-box">
                 <div className="footer-box__left-box">
                     <iframe
-                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A7f164c1660eced123104680eca30bd7c5ae25701b28a3a3a777c0a06f06d3788&amp;source=constructor"
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A8ced92b014462069987a2c4612d65c508e11f09623ce8afa48ddf3cac47fc08c&amp;source=constructor"
                         width="100%" height="100%" frameBorder="0">
                     </iframe>
                 </div>
@@ -33,8 +33,8 @@ function Footer () {
                             <h1 className="footer-box__contact-heading">
                             НАШ АДРЕС
                               </h1>
-                            <a href="https://goo.gl/maps/FkusbfJaQ3GjJMu89" className="footer-box__contacts-city">
-                                Кемерово, Плешки Заводской р-н, Таврическая 23-А
+                            <a href="https://goo.gl/maps/hNGi3KBAMBTNLy1S7" className="footer-box__contacts-city">
+                                Кемерово, Заводской р-н, Таврическая 23-А
                             </a>
                             <p>
                                 График: пн-пт: с 9 до 21, сб-вс: с 10 до 19

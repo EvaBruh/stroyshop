@@ -28,9 +28,9 @@ class Product(models.Model):
     description = models.TextField(default='<p> Абзац </p>\n', blank=True, max_length=3000, verbose_name='Описание', help_text='3000 символов.')
     price = models.PositiveIntegerField(default=0, verbose_name='Цена')
     detail = models.TextField(default='<p> Абзац </p>\n <ul>\n<li>Пункт</li>\n</ul>\n', max_length=2000, verbose_name='Характеристики', help_text='2000 символов.')
-    textOne = models.TextField(default='<p> Абзац </p>\n', max_length=2000, verbose_name='Доп. текст, 2000 символов.',
+    textOne = models.TextField(default='<p> Абзац </p>\n', blank=True, max_length=2000, verbose_name='Доп. текст, 2000 символов.',
                                         help_text='Текст после первой картинки. Сверху, над именем проекта.')
-    textTwo = models.TextField(default='<p> Абзац </p>\n', max_length=2000, verbose_name='Доп. текст, 2000 символов.',
+    textTwo = models.TextField(default='<p> Абзац </p>\n', blank=True, max_length=2000, verbose_name='Доп. текст, 2000 символов.',
                                         help_text='Текст после первой картинки. Снизу, под именем проекта.')
 
     image1 = models.ImageField(blank=True, verbose_name='Фотокарточка 1',
@@ -102,7 +102,7 @@ class BaseCard(models.Model):
 
 # Sale - Модель для отображения акций
 class Sale(BaseCard):
-    saletime = models.TextField(default='', max_length=150, verbose_name='Время акции')
+    saletime = models.TextField(default='', blank=True, max_length=150, verbose_name='Время акции')
 
     class Meta:
         verbose_name = 'Карточки - Акции'
@@ -110,7 +110,7 @@ class Sale(BaseCard):
 
 
 class ToolCard(BaseCard):
-    saletime = models.TextField(default='', max_length=150, verbose_name='Время акции')
+    saletime = models.TextField(default='', blank=True, max_length=150, verbose_name='Время акции')
 
     class Meta:
         verbose_name = 'Карточки - Инструменты'
@@ -118,7 +118,7 @@ class ToolCard(BaseCard):
 
 
 class HomeCard(BaseCard):
-    saletime = models.TextField(default='', max_length=150, verbose_name='Время акции')
+    saletime = models.TextField(default='', blank=True, max_length=150, verbose_name='Время акции')
 
     class Meta:
         verbose_name = 'Карточки - Для дома'
@@ -126,7 +126,7 @@ class HomeCard(BaseCard):
 
 
 class GardenCard(BaseCard):
-    saletime = models.TextField(default='', max_length=150, verbose_name='Время акции')
+    saletime = models.TextField(default='', blank=True, max_length=150, verbose_name='Время акции')
 
     class Meta:
         verbose_name = 'Карточки - Огород и Сад'
@@ -134,7 +134,7 @@ class GardenCard(BaseCard):
 
 
 class DecorCard(BaseCard):
-    saletime = models.TextField(default='', max_length=150, verbose_name='Время акции')
+    saletime = models.TextField(default='', blank=True, max_length=150, verbose_name='Время акции')
 
     class Meta:
         verbose_name = 'Карточки - Отделочные Материалы'
@@ -142,7 +142,7 @@ class DecorCard(BaseCard):
 
 
 class BuildCard(BaseCard):
-    saletime = models.TextField(default='', max_length=150, verbose_name='Время акции')
+    saletime = models.TextField(default='', blank=True, max_length=150, verbose_name='Время акции')
 
     class Meta:
         verbose_name = 'Карточки - Стройматериалы'
