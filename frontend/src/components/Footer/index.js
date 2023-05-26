@@ -19,8 +19,8 @@ function Footer () {
                     <div className="footer-box__contact-box">
                         <div className="footer-box__contact-links">
                             <h1 className="footer-box__contact-heading">НАШИ КОНТАКТЫ</h1>
-                            <a href="tel:+79609057096" className="footer-box__contacts-number">
-                                +7 960 905 70 96
+                            <a href="tel:+79234166020" className="footer-box__contacts-number">
+                                +7 923 416 60 20
                             </a>
                             <a href="tel:+79138733682" className="footer-box__contacts-number">
                                 +7 913 873 36 82

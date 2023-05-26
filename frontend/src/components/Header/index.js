@@ -178,11 +178,11 @@ const topLinks = [
             </div>
             <div className="header-box__contacts">
                 <div className="header-box__contacts-links">
-                    <a href="tel:+79609057096" className="header-box__contacts-link svg-phone">
+                    <a href="tel:+79234166020" className="header-box__contacts-link svg-phone">
                         <img src={Phone} alt="" className="header-box__contacts-phone"/>
                     </a>
-                    <a href="tel:+79609057096" className="header-box__contacts-link number-phone">
-                        +7 960 905 70 96
+                    <a href="tel:+79234166020" className="header-box__contacts-link number-phone">
+                        +7 923 416 60 20
                     </a>
                 </div>
             </div>

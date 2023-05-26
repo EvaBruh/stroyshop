@@ -1,10 +1,10 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
-const CHAT_ID = 926634969
+const CHAT_ID = 867798296
 
 export const modalApi = createApi({
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://api.telegram.org/bot6246801356:AAHpq8rrhHXBuM97QCLStJ0E5f9hLr3pyb8'
+        baseUrl: 'https://api.telegram.org/bot6246801356:AAHpq8rrhHXBuM97QCLStJ0E5f9hLr3pyb8/sendmessage'
     }),
     endpoints: main => ({
         sendRequest: main.mutation({
@@ -13,16 +13,17 @@ export const modalApi = createApi({
                 const text = `
                 Фамилия: ${familya}\n
                  Имя: ${name}\n
-                  Телефон: ${phone}\n
-                    
-                     `;
+                  Телефон: ${phone}\n`;
 
-                return `sendMessage?chat_id=${CHAT_ID}&text=${text}`
+                const chatId = -867798296; // Замените <YOUR_CHAT_ID> на фактический идентификатор общего чата
+                const endpoint = `sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
+                const body = { chat_id: chatId, text };
 
-            }
-        })
-    })
-})
+                return { endpoint, method: 'POST', body }; // Используйте метод 'GET' для отправки запроса
+            },
+        }),
+    }),
+});
 
 export const {endpoints, useSendRequestMutation} = modalApi;
 

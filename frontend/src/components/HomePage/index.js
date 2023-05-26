@@ -9,9 +9,9 @@ import DNS1 from '../../img/DNS1.jpg';
 import SLider from '../SliderFeedBack';
 import {reveal} from "../../functions/ScrollAnimation";
 import VR1 from '../../img/уголь.jpg';
-import VR2 from '../../img/кирпич.jpg';
+import VR2 from '../../img/палеты.jpg';
 import VR3 from '../../img/каска.jpg';
-import VR4 from '../../img/кирпи2.jpg';
+import VR4 from '../../img/22222.png';
 import {Helmet} from "react-helmet";
 import Counter from "./counter";
 
